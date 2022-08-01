@@ -5,19 +5,19 @@
             <div class="footer-inner flex">
                 <nav id="nav-footer" class="nav-footer flex">
 
+                    <!--
                     <?php wp_nav_menu(array(
                         'theme_location'  => 'global',
                         'menu_class' => '',
                         'container' => false
                     )); ?>
+                     -->
 
                 </nav>
             </div>
         </footer>
 
-        <script>
-            new WOW().init();
-        </script>
+    <script></script>
 
     <?php wp_footer(); ?>
 

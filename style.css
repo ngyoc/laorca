@@ -43,3 +43,110 @@ ul {
     list-style-type: none;
     padding-inline-start: 0;
 }
+
+/*  */
+.flex {
+    display: flex;
+}
+
+/* header  */
+.site-logo_wrap {
+    margin: auto 0;
+}
+
+.nav-wrap {
+    background: rgba(33, 33, 33, 1);
+    justify-content: center;
+    /* position: relative; */
+}
+
+.nav-wrap ul {
+    margin:0 40px;
+    position: relative;
+}
+
+.nav-wrap ul:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    transform: translate(-50%); /*位置調整*/
+    background-color: #505050; /*下線の色*/
+}
+
+.nav-wrap a {
+    color: white;
+}
+
+.nav-wrap ul li {
+    margin: auto 20px;
+    position: relative;
+}
+
+.nav-wrap ul li a {
+    font-family: 'Kiwi Maru', serif;
+}
+
+.nav-wrap ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -29px;
+    display: inline-block;
+    width: 0;
+    height: 4px;
+    transform: translate(-50%); /*位置調整*/
+    background-color: #ffffff; /*下線の色*/
+    border-radius:  10px;
+    transition: 0.5s;
+}
+
+.nav-wrap ul li:hover::after {
+    transition: 0.5s;
+    width: 110%;
+}
+
+.nav-container {
+justify-content: space-between;
+max-width: 1500px;
+height: 150px;
+margin: auto;
+}
+
+.sns-link {
+    display: flex;
+}
+
+.sns-link-wrap {
+    justify-content: center;
+    margin: auto 0;
+}
+
+.sns-link div+div{
+    margin-left:10px;
+}
+
+/* 2段目 */
+#menu-item-2129 > a:after,
+#menu-item-2130 > a:after,
+#menu-item-2131 > a:after,
+#menu-item-2132 > a:after,
+#menu-item-2133 > a:after,
+#menu-item-2134 > a:after,
+#menu-item-2135 > a:after {
+    display: block;
+    font-size: 14px;
+    margin-top:5px;
+    text-align: center;
+}
+
+#menu-item-2129 > a:after {content: 'ホーム';}
+#menu-item-2130 > a:after {content: '我が社の強み';}
+#menu-item-2131 > a:after {content: '事業内容';}
+#menu-item-2132 > a:after {content: '実績';}
+#menu-item-2133 > a:after {content: '会社情報';}
+#menu-item-2134 > a:after {content: 'ブログ';}
+#menu-item-2135 > a:after {content: '問い合わせ';}
