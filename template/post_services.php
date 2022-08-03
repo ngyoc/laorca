@@ -4,17 +4,13 @@ $page_title = $args['page_title'];
 ?>
 
 <?php echo '<div class="section--' . $taxonomy_type . '-title-wrap section-title-wrap">' ?>
-       <!-- <div class="section--strength-title-wrap section-title-wrap"> -->
 
     <?php echo '<div class="section--' . $taxonomy_type . '-title section-title">' ?>
-       <!-- <div class="section--strength--title section-title"> -->
-
         <?php echo ' <h2><p>' . $page_title . '</p></h2>' ?>
     </div><!-- /.section--strength--title -->
 
     <?php echo '<div class="section--' . $taxonomy_type . '-subtitle section-subtitle">' ?>
-    <!-- <div class="section--strength--subtitle section-subtitle"> -->
-        <p>私達の強み</p>
+        <p>提供サービス</p>
     </div><!-- /.section--strength--subtitle -->
 
 </div><!-- /.section--strength-title-wrap -->

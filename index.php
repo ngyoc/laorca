@@ -42,84 +42,15 @@
 <section class="section--services">
     <div class="section--inner">
 
-
-        <?php
+    <?php
         $args = [
-            'category_slag'  => 'postformat',
-            'page_title'     => 'SERVICE',
-            'posts_per_page' => 8,
-            'is_scrollanime' => false
+            'taxonomy_type'  => 'services',
+            'page_title'     => 'SERVICES',
         ];
 
-        // get_template_part('template/post_section', null, $args);
+        get_template_part('template/post_strength', null, $args);
+    ?>
 
-        $category_slag = $args['category_slag'];
-        $page_title = $args['page_title'];
-        $posts_per_page = $args['posts_per_page'];
-        $is_scrollanime = $args['is_scrollanime'];
-        ?>
-
-        <div class="section--service-title-wrap section-title-wrap">
-
-            <div class="section--service--title section-title">
-                <h2><p>SERVICE</p></h2>
-            </div><!-- /.section--service--title -->
-
-            <div class="section--service--subtitle section-subtitle">
-                <p>提供サービス</p>
-            </div><!-- /.section--service--subtitle -->
-
-        </div><!-- /.section--service-title-wrap -->
-
-        <?php echo '<ul class="' . $category_slag . '-list flex">' ?>
-
-        <?php
-            $paged = get_query_var('paged');
-            $args_arr = array(
-                'paged' => $paged,
-                'posts_per_page' => $posts_per_page,
-                'category_name' => $category_slag,
-                'post_status' => 'publish',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-
-            $the_query = new WP_Query($args_arr);
-            if ($the_query->have_posts()) :
-        ?>
-
-        <?php global $previousday;
-        while ($the_query->have_posts()) : $the_query->the_post();
-            $previousday = '';
-        ?>
-
-        <li>
-            <div class="post_thumbnail">
-                <!-- <?php the_post_thumbnail(); ?> -->
-            </div>
-
-            <?php echo '<div class="' . $category_slag . '-title post-title">' ?>
-                <!-- <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> -->
-                <span><?php the_title(); ?></span>
-            </div>
-
-            <?php echo '<div class="' . $category_slag . '-excerpt post-excerpt">' ?>
-                    <?php echo mb_substr(get_the_excerpt(), 0, 100); ?>
-            </div>
-
-            <?php echo '<div class="' . $category_slag . '-viewmore post-viewmore">' ?>
-                <a href="<?php the_permalink(); ?>">READ MORE</a>
-            </div>
-        </li>
-
-                <?php endwhile; ?>
-
-                <?php
-                    wp_reset_postdata();
-                    endif;
-                ?>
-
-        </ul>
 
         <div class="service-contact-wrap flex">
             <div class="service-contact">
