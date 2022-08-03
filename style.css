@@ -260,93 +260,8 @@ color: #9292eb;
 
 
 /* STRENGTH */
-.section-title-wrap {
-    text-align: center;
-}
-
-.section-title h2 {
-    margin: 0;
-    font-size: 30px;
-    font-family: 'BioRhyme', serif;
-    font-weight: bold;
-}
-
-.section-subtitle p {
-    font-size: 18px;
-}
-
-.section--strength ul,
-.section--services ul {
-    display: flex;
-    justify-content: space-between;
-}
-
-.section--strength ul li {
-    width: 300px;
-    height: 550px;
-}
-
-.post_thumbnail {
-    width: 300px;
-    height: 170px;
-    background: #bdbdbd;
-}
-
-/* .section--strength ul li .post-title {
-    margin: 20px 0 0 0;
-    font-size: 16px;
-} */
-
-/* .section--strength ul li .post-excerpt,
-.section--strength ul li .post-viewmore {
-    font-size: 14px;
-} */
-
-.section--strength ul li .post-excerpt {
-    /* margin: 20px 0 0 0; */
-}
-
 .post-excerpt {
     margin: 20px 0 0 0;
-}
-
-.section--strength ul li .post-viewmore {
-    /* text-decoration: none; */
-    /* margin: 20px 0 0 0; */
-}
-
-.post-viewmore {
-    text-decoration: none;
-    margin: 20px 0 0 0;
-}
-
-
-.section--strength ul li .post-viewmore a {
-    color: #505050;
-}
-
-.section--strength ul li .post-viewmore a::before{}
-
-
-/* works */
-.section--works {
-    height: 800px;
-}
-
-ul li .post-title {
-    margin: 20px 0 0 0;
-    font-size: 16px;
-}
-
-ul li .post-excerpt,
-ul li .post-viewmore {
-    font-size: 14px;
-}
-
-.services-list {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
 }
 
 .services-list li {
@@ -355,10 +270,6 @@ ul li .post-viewmore {
     min-height: 250px;
     width: 300px;
     text-align: center;
-}
-
-.services-list .post-excerpt {
-    /* min-height: 400px; */
 }
 
 .services-list .post-viewmore {
@@ -401,4 +312,88 @@ justify-content: center;
 .service-btn:hover {
     color: #000000;
     background: #fff;
+}
+
+/* works */
+.section--works {
+    /* min-height: 800px; */
+}
+
+/* strength services works まとめ */
+.section-title-wrap {
+    text-align: center;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 30px;
+    font-family: 'BioRhyme', serif;
+    font-weight: bold;
+}
+
+.section-subtitle p {
+    font-size: 18px;
+}
+
+.section--strength ul,
+.section--services ul,
+.section--works ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.section--strength ul li ,
+.section--services ul li ,
+.section--works ul li {
+    width: 300px;
+    /* height: 550px; */
+    margin: 0 0 20px 0;
+}
+
+.section--strength ul::after,
+.section--services ul::after,
+.section--works ul::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 0;
+}
+
+.section--strength ul::before,
+.section--services ul::before,
+.section--works ul::before {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 0;
+    order: 1;
+}
+
+.post_thumbnail {
+    width: 300px;
+    height: 170px;
+    background: #bdbdbd;
+}
+
+.post-title {
+    margin: 20px 0 0 0;
+    font-size: 16px;
+}
+
+.post-excerpt,
+.post-viewmore {
+    font-size: 14px;
+    text-decoration: none;
+    margin: 20px 0 0 0;
+}
+
+.post-viewmore a {
+    color: #505050;
+}
+
+.post-list {
+    justify-content: space-between;
+    align-items: stretch;
 }

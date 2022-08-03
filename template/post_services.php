@@ -15,7 +15,7 @@ $page_title = $args['page_title'];
 
 </div><!-- /.section--strength-title-wrap -->
 
-<?php echo '<ul class="' . $taxonomy_type . '-list">' ?>
+<?php echo '<ul class="' . $taxonomy_type . '-list post-list">' ?>
 
     <?php
     $args_arr = array(

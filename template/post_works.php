@@ -4,17 +4,13 @@ $page_title = $args['page_title'];
 ?>
 
 <?php echo '<div class="section--' . $taxonomy_type . '-title-wrap section-title-wrap">' ?>
-       <!-- <div class="section--strength-title-wrap section-title-wrap"> -->
 
     <?php echo '<div class="section--' . $taxonomy_type . '-title section-title">' ?>
-       <!-- <div class="section--strength--title section-title"> -->
-
         <?php echo ' <h2><p>' . $page_title . '</p></h2>' ?>
     </div><!-- /.section--strength--title -->
 
     <?php echo '<div class="section--' . $taxonomy_type . '-subtitle section-subtitle">' ?>
-    <!-- <div class="section--strength--subtitle section-subtitle"> -->
-        <p>私達の強み</p>
+        <p>実績</p>
     </div><!-- /.section--strength--subtitle -->
 
 </div><!-- /.section--strength-title-wrap -->
@@ -24,9 +20,10 @@ $page_title = $args['page_title'];
     <?php
     $args_arr = array(
         'post_status' => 'publish',
+        'posts_per_page' => 8,
         'post_type' => $taxonomy_type,
         'orderby' => 'date',
-        'order' => 'DESC'
+        'order' => 'ASC'
     );
 
     $the_query = new WP_Query($args_arr);
@@ -45,12 +42,7 @@ $page_title = $args['page_title'];
         </div>
 
         <?php echo '<div class="' . $taxonomy_type . '-title post-title">' ?>
-            <!-- <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> -->
             <span><?php the_title(); ?></span>
-        </div>
-
-        <?php echo '<div class="' . $taxonomy_type . '-excerpt post-excerpt">' ?>
-                <?php echo mb_substr(get_the_excerpt(), 0, 100); ?>
         </div>
 
         <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
