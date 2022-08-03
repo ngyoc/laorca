@@ -26,96 +26,14 @@
 <section class="section--strength">
     <div class="section--inner">
 
-
-<?php
-    // $args = [
-    //     'taxonomy_type'  => 'strength',
-    //     'page_title'     => 'STRENGTH',
-    // ];
-
-    // get_template_part('template/post_strength', null, $args);
-    ?>
-
-
-    <?php
-    $args = [
-        'category_slag'  => 'markup',
-        'page_title'     => 'STRENGTH',
-        'posts_per_page' => 4,
-        'is_scrollanime' => false
-    ];
-
-    // get_template_part('template/post_section', null, $args);
-
-    $category_slag = $args['category_slag'];
-    $page_title = $args['page_title'];
-    $posts_per_page = $args['posts_per_page'];
-    $is_scrollanime = $args['is_scrollanime'];
-    ?>
-
-    <div class="section--strength-title-wrap section-title-wrap">
-
-        <div class="section--strength--title section-title">
-            <h2><p>STRENGTH</p></h2>
-        </div><!-- /.section--strength--title -->
-
-        <div class="section--strength--subtitle section-subtitle">
-            <p>私達の強み</p>
-        </div><!-- /.section--strength--subtitle -->
-
-    </div><!-- /.section--strength-title-wrap -->
-
-    <?php echo '<ul class="' . $category_slag . '-list">' ?>
-
         <?php
-            $paged = get_query_var('paged');
-            $args_arr = array(
-                'paged' => $paged,
-                'posts_per_page' => $posts_per_page,
-                'category_name' => $category_slag,
-                'post_status' => 'publish',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
+            $args = [
+                'taxonomy_type'  => 'strength',
+                'page_title'     => 'STRENGTH',
+            ];
 
-            $the_query = new WP_Query($args_arr);
-            if ($the_query->have_posts()) :
+            get_template_part('template/post_strength', null, $args);
         ?>
-
-        <?php global $previousday;
-        while ($the_query->have_posts()) : $the_query->the_post();
-            $previousday = '';
-        ?>
-
-            <li>
-
-                <div class="post_thumbnail">
-                    <!-- <?php the_post_thumbnail(); ?> -->
-                </div>
-
-                <?php echo '<div class="' . $category_slag . '-title post-title">' ?>
-                    <!-- <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> -->
-                    <span><?php the_title(); ?></span>
-                </div>
-
-                <?php echo '<div class="' . $category_slag . '-excerpt post-excerpt">' ?>
-                        <?php echo mb_substr(get_the_excerpt(), 0, 100); ?>
-                </div>
-
-                <?php echo '<div class="' . $category_slag . '-viewmore post-viewmore">' ?>
-                    <a href="<?php the_permalink(); ?>">詳しく見る</a>
-                </div>
-
-
-            </li>
-
-            <?php endwhile; ?>
-
-            <?php wp_reset_postdata();
-            endif; ?>
-
-        </ul>
-
 
     </div><!-- /.section--inner -->
 </section><!-- /.section--strength -->
