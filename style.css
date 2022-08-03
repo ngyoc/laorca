@@ -9,12 +9,13 @@ Theme Name: laorca
 /* Reset */
 
 body {
-    font-family: 'Noto Serif JP', serif;
+    /* font-family: 'Noto Serif JP', serif; */
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     margin: 0 auto;
     padding: 0;
-    background-color: #EEEEEE;
+    background-color: #fff;
 }
 
 *,
@@ -49,9 +50,19 @@ ul {
     display: flex;
 }
 
+/* デバッグ */
+section {
+    border: 1px solid black;
+}
+
+
 /* header  */
 .site-logo_wrap {
     margin: auto 0;
+}
+
+.site-logo a:hover {
+    color: #9292eb;
 }
 
 .nav-wrap {
@@ -90,6 +101,10 @@ ul {
     font-family: 'Kiwi Maru', serif;
 }
 
+.nav-wrap ul li a:hover {
+    color: #9292eb;
+}
+
 .nav-wrap ul li::after {
     content: '';
     position: absolute;
@@ -112,12 +127,22 @@ ul {
 .nav-container {
 justify-content: space-between;
 max-width: 1500px;
+width: 90%;
 height: 150px;
 margin: auto;
 }
 
 .sns-link {
     display: flex;
+}
+
+.sns-link {
+font-size: 26px;
+transition: .5s;
+}
+
+.sns-link a:hover {
+color: #9292eb;
 }
 
 .sns-link-wrap {
@@ -150,3 +175,229 @@ margin: auto;
 #menu-item-2133 > a:after {content: '会社情報';}
 #menu-item-2134 > a:after {content: 'ブログ';}
 #menu-item-2135 > a:after {content: '問い合わせ';}
+
+
+/*  */
+.section--hero {
+    height: 700px;
+    /* background: rgb(118, 86, 86); */
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1500px;
+    width: 90%;
+}
+
+.hero-box {
+    position: relative;
+}
+
+.hero-image {
+    position: absolute;
+    height: 600px;
+    width: 900px;
+    background: rgb(219, 219, 219);
+    z-index: auto;
+    left:60%;
+    transform: translate(-50%); /*位置調整*/
+    background-color: #ffffff; /*下線の色*/
+    border-radius:  10px;
+}
+
+.hero-subtext,
+.hero-title,
+.hero-description {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-box {
+    position: relative;
+    width: 35%;
+    top: 80px;
+    /* left: 60px; */
+}
+
+.hero-subtext {
+    margin: 0 0 20px 0;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+.hero-description {
+    line-height: 1.8em;
+    margin: 0 0 20px 0;
+}
+
+.hero-contact-wrap {
+    margin: 50px 0;
+}
+
+.hero-contact {
+    /* margin: 0 0 0 auto; */
+    font-size: 20px;
+}
+
+.hero-contact a {
+    text-decoration: none;
+    color: #ffffff;
+    background: #000000;
+    /* border: 1px solid black; */
+    font-weight: bold;
+    padding: 25px 40px;
+    transition: 0.3s;
+}
+
+.hero-contact a:hover {
+    color: #000000;
+    background: #fff;
+}
+
+
+/* STRENGTH */
+.section-title-wrap {
+    text-align: center;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 30px;
+    font-family: 'BioRhyme', serif;
+    font-weight: bold;
+}
+
+.section-subtitle p {
+    font-size: 18px;
+}
+
+.section--strength ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section--strength ul li {
+    width: 300px;
+    height: 550px;
+}
+
+.post_thumbnail {
+    width: 300px;
+    height: 170px;
+    background: #bdbdbd;
+}
+
+/* .section--strength ul li .post-title {
+    margin: 20px 0 0 0;
+    font-size: 16px;
+} */
+
+/* .section--strength ul li .post-excerpt,
+.section--strength ul li .post-viewmore {
+    font-size: 14px;
+} */
+
+.section--strength ul li .post-excerpt {
+    /* margin: 20px 0 0 0; */
+}
+
+.post-excerpt {
+    margin: 20px 0 0 0;
+}
+
+.section--strength ul li .post-viewmore {
+    /* text-decoration: none; */
+    /* margin: 20px 0 0 0; */
+}
+
+.post-viewmore {
+    text-decoration: none;
+    margin: 20px 0 0 0;
+}
+
+
+.section--strength ul li .post-viewmore a {
+    color: #505050;
+}
+
+.section--strength ul li .post-viewmore a::before{}
+
+
+/* works */
+.section--works {
+    height: 800px;
+}
+
+ul li .post-title {
+    margin: 20px 0 0 0;
+    font-size: 16px;
+}
+
+ul li .post-excerpt,
+ul li .post-viewmore {
+    font-size: 14px;
+}
+
+.postformat-list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.postformat-list li {
+    margin-bottom: 40px;
+    position: relative;
+    min-height: 250px;
+    width: 300px;
+    text-align: center;
+}
+
+.postformat-list .post-excerpt {
+    /* min-height: 400px; */
+}
+
+.postformat-list .post-viewmore {
+    margin: 40px 0 ;
+    position: relative;
+}
+
+.postformat-list .post-viewmore a {
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px 35px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.postformat-list .post-viewmore a:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.service-contact-wrap {
+justify-content: center;
+}
+
+.service-contact-wrap {
+    margin: 20px 0 40px 0;
+}
+
+.service-btn {
+    text-decoration: none;
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 25px 40px;
+    transition: 0.3s;
+}
+
+.service-btn:hover {
+    color: #000000;
+    background: #fff;
+}
