@@ -50,7 +50,7 @@ $page_title = $args['page_title'];
         </div>
 
         <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
-            <a href="<?php the_permalink(); ?>">詳しく見る</a>
+            <a href="<?php the_permalink(); ?>" class="">詳しく見る</a>
         </div>
 
     </li>

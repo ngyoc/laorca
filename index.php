@@ -14,7 +14,7 @@
 
             <div class="hero-contact-wrap flex">
                 <div class="hero-contact">
-                    <a href="#" class="hero-btn">制作について問い合わせる</a>
+                    <a href="#" class="hero-btn btn-box-black">制作について問い合わせる</a>
                 </div><!-- /.hero-contact -->
             </div><!-- /.hero-contact-wrap -->
 
@@ -48,14 +48,12 @@
             'page_title'     => 'SERVICES',
         ];
 
-        get_template_part('template/post_strength', null, $args);
+        get_template_part('template/post_services', null, $args);
     ?>
 
 
-        <div class="service-contact-wrap flex">
-            <div class="service-contact">
-                <a href="#" class="service-btn  more-btn">サービスについて問い合わせ</a>
-            </div><!-- /.service-contact -->
+        <div class="services-contact">
+                <a href="#" class="btn-box-black">サービスについて問い合わせ</a>
         </div><!-- /.service-contact-wrap -->
 
 
@@ -75,10 +73,8 @@
         get_template_part('template/post_works', null, $args);
     ?>
 
-    <div class="works-viewmore-wrap flex">
-        <div class="works-viewmore">
-            <a href="#" class="works-btn more-btn">実績一覧</a>
-        </div><!-- /.works-viewmore -->
+    <div class="works-viewmore-wrap viewmore-wrap">
+            <a href="#" class="btn-box-black">実績一覧</a>
     </div><!-- /.works-viewmore-wrap -->
 
 
@@ -90,38 +86,15 @@
 <section class="section--about">
     <div class="section--inner">
 
-        <div class="about-image-wrap">
-            <div class="about-image">
 
-            </div><!-- /.about-image -->
-        </div><!-- /.about-image-wrap -->
+<?php
+    $args = [
+        'taxonomy_type'  => 'works',
+        'page_title'     => 'WORKS',
+    ];
 
-        <div class="about-detail-box">
-            <div class="about-title-wrap">
-                <div class="about-title">
-                    <span>ABOUT</span>
-                </div><!-- /.about-title -->
-                <div class="about-subtitle">
-                    <span>会社概要</span>
-            </div><!-- /.about-subtitle -->
-            </div><!-- /.about-title-wrap -->
-
-            <div class="about-text">
-                <p>ここに会社概要が入ります</p>
-                <p>ここに会社概要が入ります</p>
-                <p>ここに会社概要が入ります</p>
-            </div><!-- /.about-text -->
-
-            <div class="about-readmore-wrap">
-                <div class="about-readmore">
-                    <a href="#">READ MORE</a>
-                </div><!-- /.about-readmore -->
-            </div><!-- /.about-readmore-wrap -->
-
-        </div><!-- /.about-detail-wrap -->
-
-
-
+    get_template_part('template/section_about', null, $args);
+?>
 
     </div><!-- /.section--inner -->
 </section><!-- /.section--about -->
@@ -133,12 +106,20 @@
         <?php
         $args = [
             'category_slag'  => 'blog',
-            'posts_per_page' => 8,
+            'posts_per_page' => 7,
             'page_title'     => 'Our Contents',
         ];
 
         get_template_part('template/post_blog', null, $args);
         ?>
+
+    <div class="blog-viewmore-wrap viewmore-wrap">
+            <a href="#" class="btn-box-black">ブログ一覧</a>
+    </div><!-- /.blog-viewmore-wrap -->
+
+
+
+
 
         </div><!-- /.section--inner -->
 </section><!-- /.section--blog -->

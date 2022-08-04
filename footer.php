@@ -5,11 +5,7 @@
             <div class="footer-inner flex">
                 <div class="footer-L">
                     <div class="footer-logo site-logo">
-                        <?php if (is_front_page() && is_home()) : ?>
-                            <h1><a href="<?php echo esc_url(home_url('/')); ?>" class="">LA ORCA</a></h1>
-                        <?php else : ?>
-                            <p><a href="<?php echo esc_url(home_url('/')); ?>" re;="home" class="">LA ORCA</a></p>
-                        <?php endif; ?>
+                            <h2><a href="<?php echo esc_url(home_url('/')); ?>" class="">LA ORCA</a></h2>
                     </div><!-- /.footer_logo -->
 
                     <div class="co-info">
