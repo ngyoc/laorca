@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 
     <?php wp_head(); ?>
 </head>
@@ -51,7 +52,6 @@
                     )); ?>
 
                     <?php get_template_part('template/link_sns'); ?>
-
 
                 </div><!-- /.nav-container -->
             </div><!-- /.nav-wrap -->

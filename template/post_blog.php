@@ -33,22 +33,32 @@ $posts_per_page = $args['posts_per_page'];
     <?php global $previousday;
     while ($the_query->have_posts()) : $the_query->the_post();
         $previousday = '';
-    ?>
+
+        $category = get_the_category();
+        $cat = $category[0];
+
+        //カテゴリー名
+        $cat_name = $cat->name;?>
 
     <li>
+        <a href="<?php the_permalink(); ?>">
+            <div class="blog-list-inner">
 
-        <div class="post_thumbnail">
-            <!-- <?php the_post_thumbnail(); ?> -->
-        </div>
+                <div class="blog-topbar">
+                    <p class="blog-cat"><?php echo $cat_name; ?></p>
+                    <p class="blog-postdate"><?php the_time('Y/m/d') ?></p>
+                </div><!-- /.blog-topbar -->
 
-        <?php echo '<div class="blog-title post-title">' ?>
-            <span><?php the_title(); ?></span>
-        </div>
+                <?php echo '<div class="blog-title post-title">' ?>
+                    <span><?php the_title(); ?></span>
+                </div>
 
-        <?php echo '<div class="blog-viewmore post-viewmore">' ?>
-            <a href="<?php the_permalink(); ?>">詳しく見る</a>
-        </div>
+                <?php echo '<div class="' . $taxonomy_type . '-excerpt post-excerpt">' ?>
+                    <?php echo mb_substr(get_the_excerpt(), 0, 100); ?>
+                </div>
 
+            </div><!-- /.blog-list-inner -->
+        </a>
     </li>
 
     <?php endwhile; ?>

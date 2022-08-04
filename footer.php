@@ -1,19 +1,30 @@
         </div><!-- /.content-wrap wrap -->
         </div><!-- /.content-container .container -->
 
-        <footer id="footer">
+        <footer id="footer" class="flex">
             <div class="footer-inner flex">
-                <nav id="nav-footer" class="nav-footer flex">
+                <div class="footer-L">
+                    <div class="footer-logo site-logo">
+                        <?php if (is_front_page() && is_home()) : ?>
+                            <h1><a href="<?php echo esc_url(home_url('/')); ?>" class="">LA ORCA</a></h1>
+                        <?php else : ?>
+                            <p><a href="<?php echo esc_url(home_url('/')); ?>" re;="home" class="">LA ORCA</a></p>
+                        <?php endif; ?>
+                    </div><!-- /.footer_logo -->
 
-                    <!--
+                    <div class="co-info">
+                        <p>株式会社〇〇〇〇</p>
+                        <p>〒000-0000 東京都世田谷区〇〇</p>
+                    </div><!-- /.co_info -->
+                </div><!-- /.footer_L -->
+
+                <div class="footer-R">
                     <?php wp_nav_menu(array(
                         'theme_location'  => 'global',
                         'menu_class' => '',
-                        'container' => false
-                    )); ?>
-                     -->
-
-                </nav>
+                        'container' => false));
+                    ?>
+                </div><!-- /.footer_R -->
             </div>
         </footer>
 
