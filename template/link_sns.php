@@ -4,7 +4,7 @@
             <a href="<?php echo get_option( 'sns_link_facebook' ); ?>" class="fab fa-facebook"></a>
         </div>
 
-    <div class="link-twitter">
+        <div class="link-twitter">
             <a href="<?php echo get_option( 'sns_link_twitter' ); ?>" class="fab fa-twitter"></a>
         </div>
 

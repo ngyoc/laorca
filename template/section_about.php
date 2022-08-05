@@ -9,7 +9,7 @@ $page_title = $args['page_title'];
     </div><!-- /.section--strength--title -->
 
     <?php echo '<div class="section--blog-subtitle section-subtitle">' ?>
-        <p>ブログ</p>
+        <p>会社概要</p>
     </div><!-- /.section--strength--subtitle -->
 
 </div><!-- /.section--strength-title-wrap -->
@@ -30,9 +30,7 @@ $page_title = $args['page_title'];
         </div><!-- /.about-text -->
 
         <div class="about-readmore-wrap">
-            <div class="about-readmore">
-                <a href="#">READ MORE</a>
-            </div><!-- /.about-readmore -->
+            <a href="#" class="btn-box-white-s">READ MORE</a>
         </div><!-- /.about-readmore-wrap -->
 
     </div><!-- /.about-detail-wrap -->

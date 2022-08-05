@@ -1,5 +1,6 @@
 <?php
 
+
 // カスタムメニューを追加
 function menu_setup()
 {
@@ -63,3 +64,6 @@ function create_post_type()
     // register_taxonomy_for_object_type('category', 'services');
     register_taxonomy_for_object_type('category', 'works');
 }
+
+// LAORCA専用設定ページの追加
+require get_template_directory() . '/laorca_menu/laorca_menu.php';

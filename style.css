@@ -65,6 +65,17 @@ section {
     margin: 100px 0 0 0;
 }
 
+.container {
+    /* margin: 0 auto; */
+    /* max-width: 1600px; */
+    /* width: 90%; */
+}
+
+.section--inner {
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 90%;
+}
 
 /* デバッグ */
 section {
@@ -75,7 +86,7 @@ section {
 .btn-box-black {
     text-decoration: none;
     color: #ffffff;
-    background: #000000;
+    background: rgba(33, 33, 33, 1);
     border: 1px solid black;
     font-weight: bold;
     padding: 15px 50px;
@@ -83,7 +94,7 @@ section {
 }
 
 .btn-box-black:hover {
-    color: #000000;
+    color: rgba(33, 33, 33, 1);
     background: #fff;
 }
 
@@ -94,14 +105,14 @@ section {
 .btn-box-white-s {
     font-weight: bold;
     padding: 10px 50px;
-    color: #000000;
+    color: rgba(33, 33, 33, 1);
     background-color: #ffffff;
     border: 1px solid #505050;
 }
 
 .btn-box-white-s:hover {
     color: #ffffff;
-    background-color: #000000;
+    background-color: rgba(33, 33, 33, 1);
 }
 
 /* header  */
@@ -231,27 +242,43 @@ color: #9292eb;
     /* background: rgb(118, 86, 86); */
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 1600px;
-    width: 90%;
+.hero-wrap {
+    display: flex;
+    position: relative;
 }
 
 .hero-box {
     position: relative;
 }
 
-.hero-image {
+.hero-image_ {
     position: absolute;
     height: 600px;
     width: 900px;
     background: rgb(219, 219, 219);
     z-index: auto;
-    left:60%;
-    transform: translate(-50%); /*位置調整*/
-    background-color: #ffffff; /*下線の色*/
+    left: 60%;
+    transform: translate(-50%);
+    background-color: #333333;
     border-radius:  10px;
 }
+
+.hero-image {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 63.25%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url("http://placehold.jp/800x600.png");
+;
+    /* background-color: #333333; */
+}
+
+
 
 .hero-subtext,
 .hero-title,
@@ -263,12 +290,12 @@ color: #9292eb;
 .hero-box {
     position: relative;
     width: 35%;
-    top: 80px;
+    /* top: 80px; */
     /* left: 60px; */
 }
 
 .hero-subtext {
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
 }
@@ -276,17 +303,17 @@ color: #9292eb;
 .hero-title {
     font-size: 48px;
     font-weight: bold;
-    margin: 0 0 20px 0;
+    margin-bottom: 40px;
 }
 
 .hero-description {
     line-height: 1.8em;
-    margin: 0 0 20px 0;
+    margin-bottom: 40px ;
     font-size: 16px;
 }
 
 .hero-contact-wrap {
-    margin: 50px 0;
+    margin: 60px 0;
 }
 
 .hero-contact {
@@ -309,7 +336,7 @@ color: #9292eb;
 }
 
 .services-list .post-viewmore {
-    margin: 40px 0 ;
+    margin: 40px 0 0 ;
     position: relative;
 }
 
@@ -327,7 +354,7 @@ color: #9292eb;
 .more-btn {
     text-decoration: none;
     color: #ffffff;
-    background: #000000;
+    background: #333333;
     border: 1px solid black;
     font-weight: bold;
     padding: 25px 40px;
@@ -335,7 +362,7 @@ color: #9292eb;
 }
 
 .more-btn:hover {
-    color: #000000;
+    color: #333333;
     background: #fff;
 }
 
@@ -373,26 +400,28 @@ color: #9292eb;
 .section--works ul li {
     width: 380px;
     /* height: 550px; */
-    margin: 0 0 20px 0;
-}
-
-.section--strength ul::after,
-.section--services ul::after,
-.section--works ul::after {
-    content: "";
-    display: block;
-    width: 380px;
-    height: 0;
+    margin: 0 0 60px 0;
 }
 
 .section--strength ul::before,
 .section--services ul::before,
-.section--works ul::before {
+.section--works ul::before,
+.section--blog ul::before {
     content: "";
     display: block;
     width: 380px;
     height: 0;
     order: 1;
+}
+
+.section--strength ul::after,
+.section--services ul::after,
+.section--works ul::after,
+.section--blog ul::after {
+    content: "";
+    display: block;
+    width: 380px;
+    height: 0;
 }
 
 .post_thumbnail {
@@ -402,7 +431,7 @@ color: #9292eb;
 }
 
 .post-title {
-    /* width: 380px; */
+    font-weight: bold;
     margin: 20px 0 0 0;
     font-size: 16px;
     /* word-wrap: break-word; */
@@ -411,6 +440,7 @@ color: #9292eb;
 
 .post-excerpt,
 .post-viewmore {
+    position: relative;
     font-size: 14px;
     text-decoration: none;
     margin: 20px 0 0 0;
@@ -420,23 +450,33 @@ color: #9292eb;
     color: #505050;
 }
 
-.post-viewmore a:after {
-    /* content:'';
-    width: 80%;
-    height: 4px;
+.post-list>li{
+    position: relative;
+}
+
+.post-list li div{
+    color: #333333;
+}
+
+.strength-list>li>a:after,
+.services-list>li>a:after,
+.works-list>li>a:after {
+    content:'';
+    width: 25%;
+    height: 2px;
     display: inline-block;
-    background-color: #000000;
+    background-color: #333333;
     position: absolute;
     bottom: -10px;
     left: 0px;
-    transition: .5s; */
+    transition: .5s;
 }
-/*
-.post-viewmore a:hover:after {
+
+/* .post-viewmore a:hover:after { */
+.post-list>li>a:hover:after {
     width: 100%;
-} */
-
-
+    background-color: #9292eb;
+}
 
 .post-list {
     justify-content: space-between;
@@ -456,12 +496,14 @@ color: #9292eb;
 .about-image {
     width: 650px;
     height: 450px;
+    margin: auto;
     background-color: #bdbdbd;
 }
 
 .about-detail-box {
-    /* vertical-align: middle; */
+    width: 45%;
     margin: auto 0;
+    font-size: 16px;
 }
 
 .about-title-wrap {
@@ -469,7 +511,15 @@ color: #9292eb;
 
 }
 
+.about-readmore-wrap {
+    display: flex;
+    font-family: 'Roboto Slab', serif;
+}
 
+.about-readmore-wrap a {
+    margin-top:20px;
+    font-size: 14px;
+}
 
 /* blog */
 .blog-list {
@@ -490,7 +540,7 @@ color: #9292eb;
 
 .blog-list a {
     display: inline-block;
-    color: #000000;
+    color: #333333;
     width: 100%;
     height: 100%;
 }
@@ -514,6 +564,109 @@ color: #9292eb;
     font-size: 18px;
 }
 
+/* contact */
+.section--contact {
+    /* max-width: 100vw; */
+    /* width: 100vw; */
+    height: 180px;
+    background-color: #333333;
+    color: white;
+}
+
+.section--contact .section--inner {
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
+.contact-wrap {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.contact-title {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 220px;
+    margin: auto;
+}
+
+.contact-title>p {
+    font-size: 36px;
+}
+
+.contact-title h2 {
+    font-size: 14px;
+    margin: 0 ;
+}
+
+.contact-item {
+    display: flex;
+    margin:auto 0;
+    width: calc(100% - 220px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item .num a {
+    font-size:24px;
+    color: white;
+}
+
+.contact-item .txt {
+    font-size: 14px;
+}
+
+.contact-item .mail-wrap {
+    display: flex;
+}
+
+.contact-item .mail-wrap{
+    /* display: flex;
+    border: 1px solid #ffffff;
+    margin: 0 0 0 50px;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    width: 400px;
+    height: 50px; */
+}
+
+.contact-item .mail-wrap a {
+    /* height: 100%;
+    width: 100%;
+    margin: auto;
+    color: #333333;
+    vertical-align: middle; */
+}
+
+.mail-wrap {
+    display: flex;
+    margin: 0 0 0 50px;
+}
+
+.btn-contact {
+    color: #333333;
+    background: #fff;
+    border: 1px solid white;
+    padding: 10px 120px;
+}
+
+.btn-contact:hover {
+    color: #ffffff;
+    background: #333333;
+    border: 1px solid #9292eb;
+}
+
+
 
 /* footer */
 footer * {
@@ -535,7 +688,7 @@ footer a {
 footer {
     overflow: hidden;
     position: relative;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .footer-inner {

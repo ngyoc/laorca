@@ -39,24 +39,27 @@ $page_title = $args['page_title'];
     ?>
 
     <li>
+        <a href="<?php the_permalink(); ?>">
 
-        <div class="post_thumbnail">
-            <!-- <?php the_post_thumbnail(); ?> -->
-        </div>
+            <div class="post_thumbnail">
+                <!-- <?php the_post_thumbnail(); ?> -->
+            </div>
 
-        <?php echo '<div class="' . $taxonomy_type . '-title post-title">' ?>
-            <!-- <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> -->
-            <span><?php the_title(); ?></span>
-        </div>
+            <?php echo '<div class="' . $taxonomy_type . '-title post-title">' ?>
+                <!-- <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> -->
+                <span><?php the_title(); ?></span>
+            </div>
 
-        <?php echo '<div class="' . $taxonomy_type . '-excerpt post-excerpt">' ?>
+            <?php echo '<div class="' . $taxonomy_type . '-excerpt post-excerpt">' ?>
                 <?php echo mb_substr(get_the_excerpt(), 0, 100); ?>
-        </div>
+            </div>
 
-        <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
-            <a href="<?php the_permalink(); ?>">詳しく見る</a>
-        </div>
+            <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
+                <!-- <a href="<?php the_permalink(); ?>">詳しく見る</a> -->
+                <p>詳しく見る</p>
+            </div>
 
+        </a>
     </li>
 
     <?php endwhile; ?>

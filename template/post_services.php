@@ -35,7 +35,7 @@ $page_title = $args['page_title'];
     ?>
 
     <li>
-
+    <a href="<?php the_permalink(); ?>">
         <div class="post_thumbnail">
             <!-- <?php the_post_thumbnail(); ?> -->
         </div>
@@ -50,8 +50,10 @@ $page_title = $args['page_title'];
         </div>
 
         <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
-            <a href="<?php the_permalink(); ?>" class="">詳しく見る</a>
+            <!-- <a href="<?php the_permalink(); ?>" class="">詳しく見る</a> -->
+            <p>詳しく見る</p>
         </div>
+        </a>
 
     </li>
 
