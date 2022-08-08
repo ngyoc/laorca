@@ -413,6 +413,8 @@ section {
   width: 380px;
   /* height: 550px; */
   margin: 0 0 60px 0;
+  padding: 1rem;
+  position: relative;
 }
 
 .section--strength ul::before,
@@ -436,10 +438,18 @@ section {
   height: 0;
 }
 
-.post_thumbnail {
+.post-thumbnail {
+  /* width: 380px; */
+  /* height: 220px; */
+  /* height: 100%; */
+  /* background: #bdbdbd; */
+  /* background: #00ff00; */
+}
+
+.post-thumbnail img {
   width: 380px;
-  height: 220px;
-  background: #bdbdbd;
+  /* height: 220px; */
+  object-fit: cover;
 }
 
 .post-title {
@@ -478,8 +488,8 @@ section {
   height: 2px;
   display: inline-block;
   background-color: #333333;
-  position: absolute;
-  bottom: -10px;
+  /* position: absolute; */
+  /* bottom: -10px; */
   left: 0px;
   transition: 0.5s;
 }

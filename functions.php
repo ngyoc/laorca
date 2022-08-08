@@ -13,6 +13,8 @@ function menu_setup()
 
 add_action('after_setup_theme', 'menu_setup');
 
+// アイキャッチ
+add_theme_support('post-thumbnails');
 
 // 抜粋の文末文字を指定
 function custom_excerpt_more($more)

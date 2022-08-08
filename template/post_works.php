@@ -37,8 +37,13 @@ $page_title = $args['page_title'];
 
     <li>
     <a href="<?php the_permalink(); ?>">
-        <div class="post_thumbnail">
-            <!-- <?php the_post_thumbnail(); ?> -->
+        <div class="post-thumbnail">
+            <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('post-thumbnail', array('class' => 'imgのクラス名', 'alt' => get_the_title(),)); ?>
+            <?php else : ?>
+                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/ダミー画像のパス/'); ?>" alt="<?php the_title(); ?>"> -->
+                <img src="<?php echo get_option( 'default_thumbnail' ); ?>" alt="<?php the_title(); ?>">
+            <?php endif; ?>
         </div>
 
         <?php echo '<div class="' . $taxonomy_type . '-title post-title">' ?>
