@@ -1,5 +1,7 @@
 <div class="hero-wrap">
-    <div class="hero-image"></div><!-- /.hero-image -->
+
+    <div class="hero-image" style="background-image: url(<?php echo get_option('top_hero_image'); ?>)"></div>
+    <!-- /.hero-image -->
 
     <div class="hero-box">
 
@@ -12,7 +14,7 @@
         </div><!-- /.hero-description -->
 
         <div class="hero-contact-wrap flex">
-                <a href="#" class="hero-btn btn-box-black">制作について問い合わせる</a>
+            <a href="#" class="hero-btn btn-box-black">制作について問い合わせる</a>
         </div><!-- /.hero-contact-wrap -->
 
     </div><!-- /.hero-box -->

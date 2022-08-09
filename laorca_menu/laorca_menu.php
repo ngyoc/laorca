@@ -74,6 +74,7 @@ function my_init_original_settings()
 
   // セクション追加 テーマカラー設定用
   add_settings_section('laorca-menu-section-2', 'テーマカラー設定', null, 'laorca-menu');
+  add_settings_section('laorca-menu-section-3', 'HEROセクション設定', null, 'laorca-menu');
 
   // ------------------------------------------------------------------------------------------------------
 
@@ -91,6 +92,9 @@ function my_init_original_settings()
   add_settings_field('themecolor_header_hover', 'ヘッダー マウスホバー色', 'display_color_header_hover_option', 'laorca-menu', 'laorca-menu-section-2');
   add_settings_field('themecolor_post_hover', '投稿 マウスホバー色', 'display_color_header_post_option', 'laorca-menu', 'laorca-menu-section-2');
 
+  // ヒーローセクション
+  add_settings_field('top_hero_image', 'HOME画面のHERO画像の設定', 'display_hero_image_option', 'laorca-menu', 'laorca-menu-section-3');
+
   // ------------------------------------------------------------------------------------------------------
 
   // 設定の登録
@@ -101,6 +105,7 @@ function my_init_original_settings()
   register_setting('laorca-menu', 'default_thumbnail');
   register_setting('laorca-menu', 'themecolor_header_hover');
   register_setting('laorca-menu', 'themecolor_post_hover');
+  register_setting('laorca-menu', 'top_hero_image');
 }
 
 
@@ -273,4 +278,12 @@ function display_default_thumbnail_option()
   $default_thumbnail = get_option('default_thumbnail');
 
   generate_upload_image_tag('default_thumbnail', get_option('default_thumbnail'));
+}
+
+// 追加した項目の内容
+function display_hero_image_option()
+{
+  $top_hero_image = get_option('top_hero_image');
+
+  generate_upload_image_tag('top_hero_image', get_option('top_hero_image'));
 }
