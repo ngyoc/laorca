@@ -6,15 +6,19 @@
     <div class="hero-box">
 
         <div class="hero-subtext">
-            Web Production
+            <?php echo get_option('top_hero_sub_text'); ?>
         </div><!-- /.hero-subtext -->
-        <div class="hero-title">LA ORCA</div><!-- /.hero-title -->
+
+        <div class="hero-main">
+            <?php echo get_option('top_hero_main_text'); ?>
+        </div><!-- /.hero-title -->
+
         <div class="hero-description">
-            <p>BtoBには特有のマーケティング、採用、プロダクトの課題があります。<br>BtoBの勝ちパターンを網羅した180項目におよぶ独自のメソッドと140項目に及ぶ独自の制作ワークフローを駆使しながらマーケティング、デザイン、テクノロジーを組み合わせてBtoB企業の経営課題を丁寧に解決します。</p>
+            <?php echo get_option('top_hero_desc_text'); ?>
         </div><!-- /.hero-description -->
 
         <div class="hero-contact-wrap flex">
-            <a href="#" class="hero-btn btn-box-black">制作について問い合わせる</a>
+            <a href="<?php echo get_option('top_hero_contact_url'); ?>" class="hero-btn btn-box-black"><?php echo get_option('top_hero_contact_text'); ?></a>
         </div><!-- /.hero-contact-wrap -->
 
     </div><!-- /.hero-box -->

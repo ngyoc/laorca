@@ -2,30 +2,31 @@
 
 <!-- body -->
 <section class="section--hero">
-<div class="section--inner">
+    <div class="section--inner">
 
-<?php get_template_part('template/section_hero', null, $args); ?>
+        <?php get_template_part('template/section_hero', null, $args); ?>
 
 
-</div><!-- /.section--inner -->
+    </div><!-- /.section--inner -->
 </section><!-- /.hero -->
+
 
 <section class="section--strength">
     <div class="section--inner">
 
         <?php
-            $args = [
-                'taxonomy_type'  => 'strength',
-                'page_title'     => 'STRENGTH',
-            ];
+        $args = [
+            'taxonomy_type'  => 'strength',
+            'page_title'     => 'STRENGTH',
+        ];
 
-            get_template_part('template/post_strength', null, $args);
+        get_template_part('template/post_strength', null, $args);
         ?>
 
-    <div class="services-contact">
-        <a href="#" class="btn-box-black">私達の強み一覧</a>
-    </div><!-- /.service-contact-wrap -->
-
+        <div class="strength-viewmore-wrap viewmore-wrap">
+            <!-- <a href="#" class="btn-box-black">実績一覧</a> -->
+            <a href="<?php echo get_option('strength_btn_url'); ?>" class="btn-box-black"><?php echo get_option('strength_btn_text'); ?></a>
+        </div><!-- /.strength-viewmore-wrap -->
 
     </div><!-- /.section--inner -->
 </section><!-- /.section--strength -->
@@ -34,18 +35,18 @@
 <section class="section--services">
     <div class="section--inner">
 
-    <?php
+        <?php
         $args = [
             'taxonomy_type'  => 'services',
             'page_title'     => 'SERVICES',
         ];
 
         get_template_part('template/post_services', null, $args);
-    ?>
+        ?>
 
 
         <div class="services-contact">
-                <a href="#" class="btn-box-black">サービスについて問い合わせ</a>
+            <a href="<?php echo get_option('service_btn_url'); ?>" class="btn-box-black"><?php echo get_option('service_btn_text'); ?></a>
         </div><!-- /.service-contact-wrap -->
 
 
@@ -56,19 +57,19 @@
 <section class="section--works">
     <div class="section--inner">
 
-    <?php
+        <?php
         $args = [
             'taxonomy_type'  => 'works',
             'page_title'     => 'WORKS',
         ];
 
         get_template_part('template/post_works', null, $args);
-    ?>
+        ?>
 
-    <div class="works-viewmore-wrap viewmore-wrap">
-            <a href="#" class="btn-box-black">実績一覧</a>
-    </div><!-- /.works-viewmore-wrap -->
-
+        <div class="works-viewmore-wrap viewmore-wrap">
+            <!-- <a href="#" class="btn-box-black">実績一覧</a> -->
+            <a href="<?php echo get_option('service_btn_url'); ?>" class="btn-box-black"><?php echo get_option('service_btn_text'); ?></a>
+        </div><!-- /.works-viewmore-wrap -->
 
 
     </div><!-- /.section--inner -->
@@ -78,14 +79,13 @@
 <section class="section--about">
     <div class="section--inner">
 
-
-    <?php
+        <?php
         $args = [
             'page_title'     => 'About',
         ];
 
         get_template_part('template/section_about', null, $args);
-    ?>
+        ?>
 
     </div><!-- /.section--inner -->
 </section><!-- /.section--about -->
@@ -105,7 +105,7 @@
         ?>
 
         <div class="blog-viewmore-wrap viewmore-wrap">
-                <a href="#" class="btn-box-black">ブログ一覧</a>
+            <a href="#" class="btn-box-black">ブログ一覧</a>
         </div><!-- /.blog-viewmore-wrap -->
 
     </div><!-- /.section--inner -->
@@ -126,14 +126,14 @@
                 <div class="tell">
 
                     <p class="num">
-                        <a href="">00-0000-0000</a>
+                        <a href=""><?php echo get_option('contact_tell_num'); ?></a>
                     </p><!-- /.num -->
 
-                    <p class="txt">月-金 9:00-18:00（祝祭日・夏季・冬季休暇除く）</p><!-- /.txt -->
+                    <p class="txt"><?php echo get_option('contact_tell_text'); ?></p><!-- /.txt -->
                 </div><!-- /.tell -->
 
                 <div class="mail-wrap">
-                    <a href="" class="btn-contact">メールで問い合わせ</a>
+                    <a href="<?php echo get_option('contact_btn_url'); ?>" class="btn-contact"><?php echo get_option('contact_btn_text'); ?></a>
                 </div><!-- /.mail -->
             </div><!-- /.contact-item -->
 

@@ -64,7 +64,7 @@ img {
   display: flex;
 }
 
-section {
+section + section {
   margin: 100px 0 0 0;
 }
 
@@ -110,14 +110,14 @@ section {
 .btn-box-white-s {
   font-weight: bold;
   padding: 10px 50px;
-  color: rgba(33, 33, 33, 1);
-  background-color: #ffffff;
   border: 1px solid #505050;
+  color: #ffffff;
+  background-color: rgba(33, 33, 33, 1);
 }
 
 .btn-box-white-s:hover {
-  color: #ffffff;
-  background-color: rgba(33, 33, 33, 1);
+  color: rgba(33, 33, 33, 1);
+  background-color: #ffffff;
 }
 
 /* header  */
@@ -126,7 +126,8 @@ section {
 }
 
 .site-logo a:hover {
-  color: #9292eb;
+  /* color: #9292eb; */
+  color: #888888;
 }
 
 .nav-wrap {
@@ -166,7 +167,8 @@ section {
 }
 
 .nav-wrap ul li a:hover {
-  color: #9292eb;
+  /* color: #9292eb; */
+  color: #888888;
 }
 
 .nav-wrap ul li::after {
@@ -190,7 +192,7 @@ section {
 
 .nav-container {
   justify-content: space-between;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 90%;
   height: 150px;
   margin: auto;
@@ -206,7 +208,8 @@ section {
 }
 
 .sns-link a:hover {
-  color: #9292eb;
+  /* color: #9292eb; */
+  color: #bbbbbb;
 }
 
 .sns-link-wrap {
@@ -295,7 +298,7 @@ section {
 }
 
 .hero-subtext,
-.hero-title,
+.hero-main,
 .hero-description {
   position: relative;
   z-index: 5;
@@ -304,8 +307,7 @@ section {
 .hero-box {
   position: relative;
   width: 35%;
-  /* top: 80px; */
-  /* left: 60px; */
+  padding-top: 100px;
 }
 
 .hero-subtext {
@@ -314,7 +316,7 @@ section {
   font-weight: bold;
 }
 
-.hero-title {
+.hero-main {
   font-size: 4.8rem;
   font-weight: bold;
   margin-bottom: 40px;
@@ -497,7 +499,8 @@ section {
 /* .post-viewmore a:hover:after { */
 .post-list > li > a:hover:after {
   width: 100%;
-  background-color: #9292eb;
+  /* background-color: #9292eb; */
+  background-color: #888888;
 }
 
 .post-list {
@@ -511,20 +514,22 @@ section {
 }
 
 .about-image-wrap {
-  width: 55%;
+  width: 50%;
   text-align: right;
 }
 
 .about-image {
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
   height: 450px;
-  margin: auto;
+  margin: auto 0 auto auto;
   background-color: #bdbdbd;
 }
 
 .about-detail-box {
-  width: 45%;
+  width: 50%;
   margin: auto 0;
+  padding-left: 40px;
 }
 
 .about-title-wrap {
@@ -659,7 +664,8 @@ section {
 .btn-contact:hover {
   color: #ffffff;
   background: #333333;
-  border: 1px solid #9292eb;
+  /* border: 1px solid #9292eb; */
+  border: 1px solid #888888;
 }
 
 /* footer */
