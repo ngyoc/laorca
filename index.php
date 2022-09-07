@@ -58,11 +58,17 @@
     <div class="section--inner">
 
         <?php
+        $title_args = [
+            'taxonomy_type'  => 'works',
+            'page_title'     => 'WORKS',
+        ];
+
         $args = [
             'taxonomy_type'  => 'works',
             'page_title'     => 'WORKS',
         ];
 
+        get_template_part('template/echo-single-type', null, $title_args);
         get_template_part('template/post_works', null, $args);
         ?>
 
@@ -81,7 +87,7 @@
 
         <?php
         $args = [
-            'page_title'     => 'About',
+            'page_title'     => 'ABOUT',
         ];
 
         get_template_part('template/section_about', null, $args);
