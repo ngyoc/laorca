@@ -1,7 +1,7 @@
 <?php
 $taxonomy_slag = $args['taxonomy_slag'];
 $flag_link = $args['flag_link'];
-$cat_or_tag = $args['cat_or_tag'];
+// $cat_or_tag = $args['cat_or_tag'];
 
 $terms = get_the_terms($post->ID, $taxonomy_slag);
 

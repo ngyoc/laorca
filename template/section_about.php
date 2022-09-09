@@ -2,18 +2,6 @@
 $page_title = $args['page_title'];
 ?>
 
-<?php echo '<div class="section--blog-title-wrap section-title-wrap">' ?>
-
-    <?php echo '<div class="section--blog-title section-title">' ?>
-        <?php echo ' <h2><p>' . $page_title . '</p></h2>' ?>
-    </div><!-- /.section--strength--title -->
-
-    <?php echo '<div class="section--blog-subtitle section-subtitle">' ?>
-        <p>会社概要</p>
-    </div><!-- /.section--strength--subtitle -->
-
-</div><!-- /.section--strength-title-wrap -->
-
 
 <div class="about-wrap">
 

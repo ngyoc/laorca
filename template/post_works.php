@@ -1,8 +1,6 @@
 <?php
 $taxonomy_type = $args['taxonomy_type'];
-$page_title = $args['page_title'];
 ?>
-
 
 <?php echo '<ul class="' . $taxonomy_type . '-list post-list">' ?>
 

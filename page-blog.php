@@ -4,21 +4,30 @@
 
     <div class="page-type">
         <?php $title_args = [
-            'taxonomy_type'  => 'about',
-            'page_title'     => 'ABOUT',
+            'taxonomy_type' => 'blog',
+            'page_title'    => 'BLOG',
+            'page_subtitle' => 'ブログ',
         ];
-        get_template_part('template/echo-single-type', null, $title_args); ?>
+
+        get_template_part('template/echo_section_title', null, $title_args);
+        ?>
+
     </div><!-- /.works-title -->
 
 </div><!-- /.works-header -->
 
 
-<section class="section--content">
+<section class="section--content section--blog">
     <div class="section--inner">
 
-        <!-- <p>作成中</p> -->
+        <?php
+        $args = [
+            'category_slag'  => 'blog',
+            'posts_per_page' => 7,
+        ];
 
-
+        get_template_part('template/post_blog', null, $args);
+        ?>
 
     </div>
 </section>
