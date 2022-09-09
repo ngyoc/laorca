@@ -28,9 +28,9 @@ if ($the_query->have_posts()) :
             <a href="<?php the_permalink(); ?>">
                 <div class="post-thumbnail">
                     <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('post-thumbnail', array('class' => 'imgのクラス名', 'alt' => get_the_title(),)); ?>
+                        <?php the_post_thumbnail('post-thumbnail', array('alt' => get_the_title(),)); ?>
                     <?php else : ?>
-                        <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/ダミー画像のパス/'); ?>" alt="<?php the_title(); ?>"> -->
+
                         <img src="<?php echo get_option('default_thumbnail'); ?>" alt="<?php the_title(); ?>">
                     <?php endif; ?>
                 </div>
