@@ -25,18 +25,35 @@
             </div><!-- /.single-title -->
 
             <div class="post-category">
-                <!-- <p>カテゴリー：<?php get_template_part('template/echo_post_category'); ?></p> -->
-                <p>カテゴリー：
+                <?php $taxonomy_args = [
+                    'taxonomy_slag' => 'works-cat',
+                    'flag_link' => false,
+                    'cat_or_tag' => 'cat'
+                ]
+                ?>
+
+                <p>カテゴリー：<?php get_template_part('template/echo_post_taxonomy', null, $taxonomy_args); ?></p>
+
+                <!-- <p>カテゴリー：
                     <?php
                     $term = get_the_terms($post->ID, 'works-cat');
                     echo $term[0]->name;
                     ?>
-                </p>
+                </p> -->
+
             </div><!-- /.single-category -->
 
             <div class="post-tag">
-                <!-- <p>タグ：<?php get_template_part('template/echo_post_tag'); ?></p> -->
-                <p>タグ：
+                <?php $taxonomy_args = [
+                    'taxonomy_slag' => 'works-tag',
+                    'flag_link' => false,
+                    'cat_or_tag' => 'tag'
+                ]
+                ?>
+
+                <p>タグ：<?php get_template_part('template/echo_post_taxonomy', null, $taxonomy_args); ?></p>
+
+                <!-- <p>タグ：
                     <?php
                     $terms = get_the_terms($post->ID, 'works-tag');
                     foreach ((array)$terms as $term) {
@@ -45,7 +62,8 @@
                     <?php
                     }
                     ?>
-                </p>
+                </p> -->
+
             </div><!-- /.post-tag -->
 
         </div><!-- /.single-about -->
@@ -63,6 +81,13 @@
         </div><!-- /.post-content -->
 
         <?php get_template_part('template/link_post_nextprev') ?>
+
+        <div class="link--post-tag">
+
+        </div><!-- /.link--post-tag -->
+
+
+
 
 
     </div>
