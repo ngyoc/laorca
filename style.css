@@ -223,11 +223,11 @@ section {
 
 /* 2段目 */
 #menu-item-2129 > a:after,
-#menu-item-2130 > a:after,
+#menu-item-2180 > a:after,
 #menu-item-2131 > a:after,
 #menu-item-2132 > a:after,
-#menu-item-2133 > a:after,
-#menu-item-2134 > a:after,
+#menu-item-2176 > a:after,
+#menu-item-2179 > a:after,
 #menu-item-2135 > a:after {
   display: block;
   font-size: 1.4rem;
@@ -238,7 +238,7 @@ section {
 #menu-item-2129 > a:after {
   content: "ホーム";
 }
-#menu-item-2130 > a:after {
+#menu-item-2180 > a:after {
   content: "我が社の強み";
 }
 #menu-item-2131 > a:after {
@@ -247,10 +247,10 @@ section {
 #menu-item-2132 > a:after {
   content: "実績";
 }
-#menu-item-2133 > a:after {
+#menu-item-2176 > a:after {
   content: "会社情報";
 }
-#menu-item-2134 > a:after {
+#menu-item-2179 > a:after {
   content: "ブログ";
 }
 #menu-item-2135 > a:after {
@@ -665,6 +665,7 @@ section {
 }
 
 /* works-header single-works */
+.page-header,
 .works-header,
 .single-header {
   height: 350px;
@@ -672,18 +673,25 @@ section {
   display: flex;
 }
 
+.page-header .section-title-wrap,
 .works-header .section-title-wrap,
 .single-header .section-title-wrap {
   margin-bottom: 0px;
 }
 
+.page-type,
 .works-type,
 .single-type {
   margin: auto;
 }
 
 .section--works {
-  margin-top: 80px;
+  margin-top: 40px;
+}
+
+/* page */
+.section--content {
+  min-height: 800px;
 }
 
 /* page-works */
@@ -760,6 +768,11 @@ table {
 
 .link-prev-post a::after {
   content: "＞";
+}
+
+/* archives */
+.section--archives {
+  min-height: 800px;
 }
 
 /* single-works */
