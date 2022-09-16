@@ -222,13 +222,14 @@ section {
 }
 
 /* 2段目 */
-#menu-item-2129 > a:after,
+/* #menu-item-2129 > a:after,
 #menu-item-2180 > a:after,
-#menu-item-2131 > a:after,
-#menu-item-2132 > a:after,
+#menu-item-2183 > a:after,
+#menu-item-2184 > a:after,
 #menu-item-2176 > a:after,
 #menu-item-2179 > a:after,
-#menu-item-2135 > a:after {
+#menu-item-2135 > a:after */
+.menu-item > a:after {
   display: block;
   font-size: 1.4rem;
   margin-top: 5px;
@@ -241,10 +242,10 @@ section {
 #menu-item-2180 > a:after {
   content: "我が社の強み";
 }
-#menu-item-2131 > a:after {
+#menu-item-2183 > a:after {
   content: "事業内容";
 }
-#menu-item-2132 > a:after {
+#menu-item-2184 > a:after {
   content: "実績";
 }
 #menu-item-2176 > a:after {
@@ -253,7 +254,7 @@ section {
 #menu-item-2179 > a:after {
   content: "ブログ";
 }
-#menu-item-2135 > a:after {
+#menu-item-2188 > a:after {
   content: "問い合わせ";
 }
 
@@ -685,7 +686,8 @@ section {
   margin: auto;
 }
 
-.section--works {
+/* .section--works */
+.section--content {
   margin-top: 40px;
 }
 

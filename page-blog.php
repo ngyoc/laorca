@@ -23,7 +23,7 @@
         <?php
         $args = [
             'category_slag'  => 'blog',
-            'posts_per_page' => 7,
+            'posts_per_page' => 12,
         ];
 
         get_template_part('template/post_blog', null, $args);

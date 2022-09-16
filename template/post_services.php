@@ -5,7 +5,10 @@ $taxonomy_type = $args['taxonomy_type'];
 <?php echo '<ul class="' . $taxonomy_type . '-list post-list">' ?>
 
 <?php
+$paged = get_query_var('paged');
+
 $args_arr = array(
+    'paged' => $paged,
     'post_status' => 'publish',
     'post_type' => $taxonomy_type,
     'orderby' => 'date',
@@ -56,3 +59,15 @@ if ($the_query->have_posts()) :
 endif; ?>
 
 </ul>
+<?php if (!is_front_page()) : ?>
+
+    <?php
+    $pagenation_args = [
+        'the_query'  => $the_query,
+        'paged'     => $paged,
+        'pagenation_type' => 'post'
+    ];
+
+    get_template_part('template/pagenation', null, $pagenation_args); ?>
+
+<?php endif; ?>

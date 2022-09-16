@@ -6,11 +6,14 @@ $posts_per_page = $args['posts_per_page'];
 <?php echo '<ul class="' . $category_slag . '-list post-list">' ?>
 
 <?php
+$paged = get_query_var('paged');
+
 $args_arr = array(
+    'paged' => $paged,
     'posts_per_page' => $posts_per_page,
     'post_status' => 'publish',
     'orderby' => 'date',
-    'order' => 'ASC'
+    'order' => 'DESC'
 );
 
 $the_query = new WP_Query($args_arr);
@@ -54,3 +57,16 @@ if ($the_query->have_posts()) :
 endif; ?>
 
 </ul>
+
+<?php if (!is_front_page()) : ?>
+
+    <?php
+    $pagenation_args = [
+        'the_query'  => $the_query,
+        'paged'     => $paged,
+        'pagenation_type' => 'post'
+    ];
+
+    get_template_part('template/pagenation', null, $pagenation_args); ?>
+
+<?php endif; ?>
