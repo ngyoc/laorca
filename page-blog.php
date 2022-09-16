@@ -2,6 +2,8 @@
 
 <div class="page-header">
 
+    <?php echo '<img src=' . get_option('page_header_image_blog') . '>'; ?>
+
     <div class="page-type">
         <?php $title_args = [
             'taxonomy_type' => 'blog',

@@ -672,6 +672,7 @@ section {
   height: 350px;
   background: #c1c1c1;
   display: flex;
+  position: relative;
 }
 
 .page-header .section-title-wrap,
@@ -692,8 +693,20 @@ section {
 }
 
 /* page */
+
+.page-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
 .section--content {
   min-height: 800px;
+}
+.page-header img {
+  width: 100%;
 }
 
 /* page-works */

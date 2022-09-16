@@ -3,6 +3,8 @@
 <div class="page-header">
     <div class="page-type">
 
+        <?php echo '<img src=' . get_option('page_header_image_service') . '>'; ?>
+
         <?php
         $title_args = [
             'taxonomy_type'  => 'service',

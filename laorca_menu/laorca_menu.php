@@ -80,8 +80,10 @@ function my_init_original_settings()
   add_settings_section('laorca-menu-section-works',    'WORKS',    null, 'laorca-menu'); // WORKS
   add_settings_section('laorca-menu-section-about',    'ABOUT',    null, 'laorca-menu'); // ABOUT
   add_settings_section('laorca-menu-section-blog',     'BLOG',     null, 'laorca-menu'); // BLOG
-  add_settings_section('laorca-menu-section-contact',  'CONTACT',  null, 'laorca-menu'); // contact
-  add_settings_section('laorca-menu-section-footer',   'フッター',         null, 'laorca-menu'); // HERO
+  add_settings_section('laorca-menu-section-contact',  'CONTACT',  null, 'laorca-menu'); // CONTACT
+  add_settings_section('laorca-menu-section-footer',   'フッター', null, 'laorca-menu'); // footer
+  add_settings_section('laorca-menu-section-page-header', '各固定ページヘッダー画像', 'page_header_section_desc', 'laorca-menu'); // footer
+
 
   // ------------------------------------------------------------------------------------------------------
   // オリジナル設定項目追加
@@ -135,6 +137,15 @@ function my_init_original_settings()
   add_settings_field('contact_btn_text',  '問い合わせボタンテキスト',  'display_contact_btn_text_option', 'laorca-menu', 'laorca-menu-section-contact');
   add_settings_field('contact_btn_url',  '問い合わせボタン リンク先', 'display_contact_btn_url_option', 'laorca-menu', 'laorca-menu-section-contact');
 
+  // 各固定ページヘッダー画像
+  add_settings_field('page_header_image_strength', 'STRENGTH', 'display_page_header_image_strength_option', 'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_service',  'SERVICE',  'display_page_header_image_service_option',  'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_work',     'WORK',  'display_page_header_image_work_option',  'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_about',    'ABOUT',  'display_page_header_image_about_option',  'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_blog',     'BLOG',  'display_page_header_image_blog_option',  'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_contact',  'CONTACT',  'display_page_header_image_contact_option',  'laorca-menu', 'laorca-menu-section-page-header');
+
+
   // ------------------------------------------------------------------------------------------------------
   // 設定の登録
 
@@ -186,6 +197,14 @@ function my_init_original_settings()
   register_setting('laorca-menu', 'contact_tell_text');
   register_setting('laorca-menu', 'contact_btn_text');
   register_setting('laorca-menu', 'contact_btn_url');
+
+  // 各固定ページ ヘッダー画像設定セクション
+  register_setting('laorca-menu', 'page_header_image_strength');
+  register_setting('laorca-menu', 'page_header_image_service');
+  register_setting('laorca-menu', 'page_header_image_work');
+  register_setting('laorca-menu', 'page_header_image_about');
+  register_setting('laorca-menu', 'page_header_image_blog');
+  register_setting('laorca-menu', 'page_header_image_contact');
 }
 
 
@@ -195,6 +214,10 @@ function my_original_menu_section_func()
   echo '<p>LA ORCAセクション１です</p>';
 }
 
+function page_header_section_desc()
+{
+  echo '<p>推奨サイズ 1920px x 350px</p>';
+}
 
 // ------------------------------------------------------------------------------------------------------
 // 表示用：設定項目レイアウト作成用HTML関数
@@ -557,10 +580,55 @@ function display_hero_image_option()
   generate_upload_image_tag('top_hero_image', get_option('top_hero_image'));
 }
 
-// ABOUT image
+// ABOUT top image
 function display_about_image_option()
 {
   $about_image = get_option('about_image');
 
   generate_upload_image_tag('about_image', get_option('about_image'));
+}
+
+
+// 各固定ページヘッダー画像
+
+// STRENGTH header image
+function display_page_header_image_strength_option()
+{
+  $page_header_image_strength = get_option('page_header_image_strength');
+  generate_upload_image_tag('page_header_image_strength', get_option('page_header_image_strength'));
+}
+
+// SERVICE header image
+function display_page_header_image_service_option()
+{
+  $page_header_image_service = get_option('page_header_image_service');
+  generate_upload_image_tag('page_header_image_service', get_option('page_header_image_service'));
+}
+
+// WORK header image
+function display_page_header_image_work_option()
+{
+  $page_header_image_work = get_option('page_header_image_work');
+  generate_upload_image_tag('page_header_image_work', get_option('page_header_image_work'));
+}
+
+// ABOUT header image
+function display_page_header_image_about_option()
+{
+  $page_header_image_about = get_option('page_header_image_about');
+  generate_upload_image_tag('page_header_image_about', get_option('page_header_image_about'));
+}
+
+// BLOG header image
+function display_page_header_image_blog_option()
+{
+  $page_header_image_blog = get_option('page_header_image_blog');
+  generate_upload_image_tag('page_header_image_blog', get_option('page_header_image_blog'));
+}
+
+// CONTACT header image
+function display_page_header_image_contact_option()
+{
+  $page_header_image_contact = get_option('page_header_image_contact');
+  generate_upload_image_tag('page_header_image_contact', get_option('page_header_image_contact'));
 }

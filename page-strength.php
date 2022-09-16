@@ -2,6 +2,8 @@
 
 <div class="strength-header page-header">
 
+    <?php echo '<img src=' . get_option('page_header_image_strength') . '>'; ?>
+
     <div class="page-type">
         <?php $title_args = [
             'title_slag'  => 'strength',
