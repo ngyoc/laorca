@@ -120,6 +120,31 @@ section {
   background-color: #ffffff;
 }
 
+/* pagenation */
+.pagenation {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.page-numbers {
+  text-decoration: none;
+  color: #222222;
+  border: #222222 1px solid;
+  padding: 10px;
+  /* border-radius: 10px; */
+}
+
+.page-numbers:hover {
+  color: #ffffff;
+  background-color: #505050;
+}
+
+.page-numbers.current {
+  color: #ffffff;
+  background-color: #222222;
+}
+
 /* header  */
 .site-logo_wrap {
   margin: auto 0;
@@ -222,13 +247,6 @@ section {
 }
 
 /* 2段目 */
-/* #menu-item-2129 > a:after,
-#menu-item-2180 > a:after,
-#menu-item-2183 > a:after,
-#menu-item-2184 > a:after,
-#menu-item-2176 > a:after,
-#menu-item-2179 > a:after,
-#menu-item-2135 > a:after */
 .menu-item > a:after {
   display: block;
   font-size: 1.4rem;
@@ -260,7 +278,7 @@ section {
 
 /*  */
 .section--hero {
-  height: 700px;
+  min-height: 700px;
   /* background: rgb(118, 86, 86); */
 }
 
@@ -285,17 +303,23 @@ section {
   border-radius: 10px;
 }
 
-.hero-image {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%);
-  width: 63.25%;
-  height: 100%;
-  background-position: 50% 50%;
-  background-size: cover;
-  /* background-image: url("http://placehold.jp/800x600.png"); */
+@media screen and (min-width: 960px) {
+  .hero-image {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 63.25%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+  .hero-box {
+    position: relative;
+    width: 35%;
+    padding-top: 100px;
+  }
 }
 
 .hero-subtext,
@@ -303,12 +327,6 @@ section {
 .hero-description {
   position: relative;
   z-index: 5;
-}
-
-.hero-box {
-  position: relative;
-  width: 35%;
-  padding-top: 100px;
 }
 
 .hero-subtext {
@@ -409,7 +427,8 @@ section {
 .section--strength ul li,
 .section--services ul li,
 .section--works ul li {
-  width: 380px;
+  width: 80%;
+  max-width: 380px;
   /* height: 550px; */
   margin: 0 0 60px 0;
   padding: 1rem;
@@ -435,6 +454,10 @@ section {
   display: block;
   width: 380px;
   height: 0;
+}
+
+.post-list img {
+  height: 270px;
 }
 
 .post-thumbnail {
@@ -689,7 +712,7 @@ section {
 
 /* .section--works */
 .section--content {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 /* page */
@@ -703,7 +726,7 @@ section {
 }
 
 .section--content {
-  min-height: 800px;
+  /* min-height: 800px; */
 }
 .page-header img {
   width: 100%;
@@ -712,6 +735,10 @@ section {
 /* page-works */
 
 /* single-works */
+.section--single {
+  margin-top: 40px;
+}
+
 .section--single .section--inner {
   max-width: 900px;
   width: 90%;
@@ -838,4 +865,57 @@ footer {
 
 .footer-R ul li + li {
   margin: 0 0 0 30px;
+}
+
+@media screen and (max-width: 959px) {
+  .hero-wrap {
+    display: block;
+  }
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .hero-image {
+    position: relative;
+    width: 100vw;
+    height: 75.07vw;
+    max-height: 470px;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .hero-box {
+    margin: auto;
+    width: 90vw;
+  }
+
+  .btn-box-black {
+    width: 80%;
+    text-align: center;
+  }
+
+  .section--hero .section--inner {
+    width: 100%;
+  }
+
+  .post-list {
+    align-items: center;
+  }
+
+  .section--strength ul li,
+  .section--services ul li,
+  .section--works ul li {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+  }
+
+  .post-thumbnail img {
+    width: 100%;
+  }
+
+  .blog-list li {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
 }
