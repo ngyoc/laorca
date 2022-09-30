@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <div class="page-header">
+
+    <?php echo '<img src=' . get_option('page_header_image_service') . '>'; ?>
+
     <div class="page-type">
-
-        <?php echo '<img src=' . get_option('page_header_image_service') . '>'; ?>
-
         <?php
         $title_args = [
             'taxonomy_type'  => 'service',
