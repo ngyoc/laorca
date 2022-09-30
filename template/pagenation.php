@@ -12,8 +12,8 @@ if ($the_query->max_num_pages > 1) :
         'format' => '?paged=%#%',
         'current' => max(1, $paged),
         'total' => $the_query->max_num_pages,
-        'next_text' => 'OLD',
-        'prev_text' => 'NEW'
+        'next_text' => '>',
+        'prev_text' => '<'
     ));
     echo '</div>';
     echo '</div>';
