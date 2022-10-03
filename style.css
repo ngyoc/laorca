@@ -178,7 +178,8 @@ section {
   background-color: #505050; /*下線の色*/
 }
 
-.nav-wrap a {
+.nav-wrap a,
+.nav-sp-wrap a {
   color: white;
 }
 
@@ -274,6 +275,146 @@ section {
 }
 #menu-item-2188 > a:after {
   content: "問い合わせ";
+}
+
+@media screen and (max-width: 960px) {
+  nav.nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 959px) {
+  nav.nav-sp {
+    display: none;
+  }
+}
+
+/* スマホ用ナビゲーションメニュー */
+
+.drawer-top-margin {
+  height: 46px;
+}
+
+.nav-sp-wrap {
+  background: rgba(24, 23, 23, 1);
+}
+
+.nav-sp-container {
+  display: flex;
+  position: fixed;
+  height: 4vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  background: rgba(24, 23, 23, 1);
+}
+
+.nav-sp-container .drawer {
+  position: absolute;
+  right: 0;
+}
+
+.drawer-hidden {
+  display: none;
+}
+
+.drawer-open {
+  display: none;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  /* 重なり順を一番上に */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 959px) {
+  .drawer-open {
+    display: flex;
+  }
+}
+
+/* ハンバーガーメニューのアイコン */
+
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #9eb1e8;
+  /* background: #333; */
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+
+.drawer-open span:before {
+  bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+
+.drawer-open span:after {
+  top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+
+#drawer-check:checked ~ .drawer-open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になるように上下の線を回転 */
+
+#drawer-check:checked ~ .drawer-open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer-check:checked ~ .drawer-open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+
+.drawer-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: rgba(24, 23, 23, 1);
+  transition: 0.5s;
+  margin-top: 46px;
+}
+
+.drawer-content ul li {
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-size: 2.5rem;
+}
+
+.drawer-content ul li a {
+  color: white;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+
+#drawer-check:checked ~ .drawer-content {
+  left: 0;
+  /* メニューを画面に入れる */
 }
 
 /*  */

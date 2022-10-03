@@ -56,6 +56,42 @@
                 </div><!-- /.nav-container -->
             </div><!-- /.nav-wrap -->
         </nav><!-- /.nav -->
+
+        <nav class="nav-sp">
+            <div class="nav-sp-wrap ">
+                <div class="nav-sp-container container ">
+
+                    <div class="site-logo">
+                        <?php if (is_front_page() && is_home()) : ?>
+                            <h1><a href="<?php echo esc_url(home_url('/')); ?>" class="no-deco t-white">LA ORCA</a></h1>
+
+                        <?php else : ?>
+                            <p><a href="<?php echo esc_url(home_url('/')); ?>" re;="home" class="no-deco t-white">LA ORCA</a></p>
+
+                        <?php endif; ?>
+                    </div>
+
+
+                    <div class="drawer">
+                        <input type="checkbox" class="checkbox drawer-hidden" id="drawer-check">
+                        <label for="drawer-check" class="drawer-open"><span></span></label>
+
+                        <div class="drawer-content">
+                            <?php wp_nav_menu(array(
+                                'theme_location'  => 'global',
+                                'menu_class' => '',
+                                'container' => false
+                            )); ?>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+
+
+
     </header>
 
     <div class="content-wrap wrap">
