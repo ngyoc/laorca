@@ -162,6 +162,7 @@ section {
 }
 
 .nav-wrap ul {
+  min-height: 120px;
   margin: 0 40px;
   position: relative;
 }
@@ -201,7 +202,7 @@ section {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -29px;
+  bottom: -15px;
   display: inline-block;
   width: 0;
   height: 4px;
@@ -217,11 +218,13 @@ section {
 }
 
 .nav-container {
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1600px;
   width: 90%;
-  height: 150px;
+  min-height: 150px;
   margin: auto;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .sns-link {
@@ -241,6 +244,7 @@ section {
 .sns-link-wrap {
   justify-content: center;
   margin: auto 0;
+  padding: 30px 0;
 }
 
 .sns-link div + div {
@@ -277,13 +281,17 @@ section {
   content: "問い合わせ";
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 959px) {
   nav.nav {
     display: none;
   }
+
+  .content-container {
+    margin-top: 4vh;
+  }
 }
 
-@media screen and (min-width: 959px) {
+@media screen and (min-width: 960px) {
   nav.nav-sp {
     display: none;
   }
@@ -293,6 +301,10 @@ section {
 
 .drawer-top-margin {
   height: 46px;
+}
+.nav-sp,
+.nav-sp-wrap {
+  position: relative;
 }
 
 .nav-sp-wrap {
@@ -333,7 +345,7 @@ section {
   cursor: pointer;
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 960px) {
   .drawer-open {
     display: flex;
   }
@@ -349,7 +361,7 @@ section {
   height: 3px;
   width: 25px;
   border-radius: 3px;
-  background: #9eb1e8;
+  background: #ffffff;
   /* background: #333; */
   transition: 0.5s;
   position: absolute;
@@ -397,7 +409,7 @@ section {
   z-index: 99;
   background: rgba(24, 23, 23, 1);
   transition: 0.5s;
-  margin-top: 46px;
+  margin-top: 4vh;
 }
 
 .drawer-content ul li {
@@ -472,7 +484,7 @@ section {
 
 .hero-subtext {
   margin-bottom: 20px;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", "Noto Sans JP";
   font-weight: bold;
 }
 
@@ -550,7 +562,7 @@ section {
   margin: 0;
   font-size: 3rem;
   /* font-family: 'BioRhyme', serif; */
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", "Noto Sans JP";
   font-weight: bold;
 }
 
@@ -567,7 +579,8 @@ section {
 
 .section--strength ul li,
 .section--services ul li,
-.section--works ul li {
+.section--works ul li,
+.section--archives ul li {
   width: 80%;
   max-width: 380px;
   /* height: 550px; */
@@ -579,7 +592,8 @@ section {
 .section--strength ul::before,
 .section--services ul::before,
 .section--works ul::before,
-.section--blog ul::before {
+.section--blog ul::before,
+.section--archives ul::before {
   content: "";
   display: block;
   width: 380px;
@@ -590,7 +604,8 @@ section {
 .section--strength ul::after,
 .section--services ul::after,
 .section--works ul::after,
-.section--blog ul::after {
+.section--blog ul::after,
+.section--archives ul::after {
   content: "";
   display: block;
   width: 380px;
@@ -602,11 +617,6 @@ section {
 }
 
 .post-thumbnail {
-  /* width: 380px; */
-  /* height: 220px; */
-  /* height: 100%; */
-  /* background: #bdbdbd; */
-  /* background: #00ff00; */
 }
 
 .post-thumbnail img {
@@ -645,7 +655,8 @@ section {
 
 .strength-list > li > a:after,
 .services-list > li > a:after,
-.works-list > li > a:after {
+.works-list > li > a:after,
+.section--archives ul li a:after {
   content: "";
   width: 25%;
   height: 2px;
@@ -674,6 +685,33 @@ section {
   display: flex;
 }
 
+@media screen and (max-width: 959px) {
+  .about-wrap {
+    flex-direction: column;
+  }
+
+  .about-wrap .about-image-wrap {
+    width: 100%;
+  }
+
+  .about-image-wrap .about-image {
+    margin: auto;
+    max-width: none;
+  }
+
+  .about-wrap .about-detail-box {
+    width: 100%;
+    margin-top: 20px;
+    /* margin: auto; */
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .about-readmore-wrap {
+    justify-content: center;
+  }
+}
+
 .about-image-wrap {
   width: 50%;
   text-align: right;
@@ -685,6 +723,7 @@ section {
   height: 450px;
   margin: auto 0 auto auto;
   background-color: #bdbdbd;
+  background-size: cover;
 }
 
 .about-detail-box {
@@ -750,7 +789,7 @@ section {
 .section--contact {
   /* max-width: 100vw; */
   /* width: 100vw; */
-  height: 180px;
+  /* min-height: 180px; */
   background-color: #333333;
   color: white;
 }
@@ -762,8 +801,10 @@ section {
 }
 
 .contact-wrap {
+  position: relative;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   /* justify-content: space-between; */
 }
 
@@ -771,7 +812,18 @@ section {
   display: flex;
   flex-direction: column-reverse;
   width: 220px;
-  margin: auto;
+}
+
+@media screen and (max-width: 959px) {
+  .contact-title {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .contact-title {
+    margin: auto auto auto 0;
+  }
 }
 
 .contact-title > p {
@@ -786,15 +838,48 @@ section {
 .contact-item {
   display: flex;
   margin: auto 0;
-  width: calc(100% - 220px);
-  display: flex;
+  /* min-width: 450px; */
+  /* width: calc(100% - 220px); */
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
+  text-align: center;
 }
 
-.contact-item {
-  text-align: center;
+@media screen and (min-width: 960px) {
+  .mail-wrap {
+    display: flex;
+    margin: 0 0 0 50px;
+  }
+
+  .section--contact {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .section--contact {
+    min-height: 180px;
+  }
+
+  .contact-wrap,
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+  }
+
+  .mail-wrap {
+    margin-top: 10px;
+  }
+
+  .contact-title {
+    margin: 20px auto;
+  }
+
+  .contact-item {
+    margin: 20px auto;
+  }
 }
 
 .contact-item .num a {
@@ -808,11 +893,6 @@ section {
 
 .contact-item .mail-wrap {
   display: flex;
-}
-
-.mail-wrap {
-  display: flex;
-  margin: 0 0 0 50px;
 }
 
 .btn-contact {
@@ -832,7 +912,8 @@ section {
 /* works-header single-works */
 .page-header,
 .works-header,
-.single-header {
+.single-header,
+.archives-header {
   height: 350px;
   background: #c1c1c1;
   display: flex;
@@ -858,7 +939,8 @@ section {
 
 /* page */
 
-.page-type {
+.page-type,
+.archives-type {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -899,6 +981,10 @@ section {
   text-align: center;
 }
 
+.post-content {
+  margin: 40px 0;
+}
+
 .post-content table {
   font-size: 14px;
   /* font-size: 0.875rem; */
@@ -933,6 +1019,11 @@ table {
   border-spacing: 0;
 }
 
+.post-category > p > span + span,
+.post-tag > p > span + span {
+  margin-left: 20px;
+}
+
 .link--related-post {
   text-decoration: none;
   margin: 40px 0;
@@ -955,19 +1046,25 @@ table {
 
 /* archives */
 .section--archives {
-  min-height: 800px;
+  min-height: 400px;
 }
 
 /* single-works */
 
 /* footer */
-footer * {
-  /* border: 1px solid #000 */
+footer#footer {
+  background: rgba(33, 33, 33, 1);
+}
+@media screen and (min-width: 960px) {
+  footer#footer {
+    height: 300px;
+  }
 }
 
-footer#footer {
-  height: 300px;
-  background: rgba(33, 33, 33, 1);
+@media screen and (max-width: 959px) {
+  footer#footer {
+    min-height: 150px;
+  }
 }
 
 footer h1,
@@ -983,15 +1080,33 @@ footer {
 }
 
 .footer-inner {
-  padding: 20px 100px;
-  width: 100%;
+  /* padding: 20px 100px; */
+  /* width: 100%; */
+  width: 90%;
+  max-width: 1600px;
   justify-content: space-between;
+  margin: auto;
 }
 
 .footer-L,
 .footer-R {
   vertical-align: middle;
-  margin: auto 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 959px) {
+  .footer-inner {
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .footer-L {
+    margin: auto auto auto 0;
+  }
+
+  .footer-R {
+    margin: auto 0 auto auto;
+  }
 }
 
 .footer-logo h2 {
@@ -1002,6 +1117,12 @@ footer {
 .footer-R ul {
   display: flex;
   font-family: "Kiwi Maru", serif;
+}
+
+@media screen and (max-width: 959px) {
+  .footer-R {
+    display: none;
+  }
 }
 
 .footer-R ul li + li {
@@ -1015,7 +1136,7 @@ footer {
   /* 959px以下に適用されるCSS（タブレット用） */
   .hero-image {
     position: relative;
-    width: 100vw;
+    /* width: 100vw; */
     height: 75.07vw;
     max-height: 470px;
     background-position: 50% 50%;
@@ -1023,13 +1144,14 @@ footer {
   }
 
   .hero-box {
-    margin: auto;
+    margin: 20px auto auto auto;
     width: 90vw;
   }
 
   .btn-box-black {
     width: 80%;
     text-align: center;
+    margin: auto;
   }
 
   .section--hero .section--inner {
@@ -1042,10 +1164,11 @@ footer {
 
   .section--strength ul li,
   .section--services ul li,
-  .section--works ul li {
+  .section--works ul li,
+  .section--archives ul li {
     width: 100%;
     max-width: 520px;
-    margin: auto;
+    margin: 10px auto;
   }
 
   .post-thumbnail img {

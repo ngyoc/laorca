@@ -14,7 +14,7 @@ foreach ((array)$terms as $term) {
         if ($flag_link) :
             echo '<span class="post_taxonomy"><a href="' . get_term_link($term->slug, $taxonomy_slag) . '">' . $term->name . '</a></span>';
         else :
-            echo $term->name;
+            echo '<span>' . $term->name . '</span>';
         endif;
     }
 }

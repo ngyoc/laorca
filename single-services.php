@@ -3,9 +3,9 @@
 <div class="single-header">
     <div class="single-type">
         <?php $title_args = [
-            'title_slag'    => 'blog',
-            'page_title'    => 'BLOG',
-            'page_subtitle' => 'ブログ',
+            'title_slag'    => 'services',
+            'page_title'    => 'SERVICES',
+            'page_subtitle' => '事業内容',
         ];
 
         get_template_part('template/echo_section_title', null, $title_args);
@@ -31,7 +31,6 @@
             <?php the_content(); ?>
         </div><!-- /.post-content -->
 
-        <?php get_template_part('template/link_post_nextprev') ?>
 
     </div>
 </section>

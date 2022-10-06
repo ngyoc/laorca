@@ -3,9 +3,9 @@
 <div class="single-header">
     <div class="single-type">
         <?php $title_args = [
-            'title_slag'    => 'blog',
-            'page_title'    => 'BLOG',
-            'page_subtitle' => 'ブログ',
+            'title_slag'    => 'strength',
+            'page_title'    => 'STRENGTH',
+            'page_subtitle' => '我が社の強み',
         ];
 
         get_template_part('template/echo_section_title', null, $title_args);
@@ -24,14 +24,12 @@
                 <h1><?php the_title(); ?></h1>
             </div><!-- /.single-title -->
 
-
         </div><!-- /.single-about -->
 
         <div class="post-content">
             <?php the_content(); ?>
         </div><!-- /.post-content -->
 
-        <?php get_template_part('template/link_post_nextprev') ?>
 
     </div>
 </section>
