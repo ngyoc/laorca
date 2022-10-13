@@ -25,7 +25,7 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
-  transition: ease 0.1s;
+  /* transition: ease 0.1s; */
 }
 
 a:link,
@@ -101,12 +101,6 @@ section {
   background: #fff;
 }
 
-.btn-white {
-}
-
-.btn-white:hover {
-}
-
 .btn-box-white-s {
   font-weight: bold;
   padding: 10px 50px;
@@ -118,6 +112,16 @@ section {
 .btn-box-white-s:hover {
   color: rgba(33, 33, 33, 1);
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 959px) {
+  .about-readmore-wrap .btn-box-black {
+    font-weight: bold;
+    padding: 15px 50px;
+    border: 1px solid #505050;
+    color: #ffffff;
+    background-color: rgba(33, 33, 33, 1);
+  }
 }
 
 /* pagenation */
@@ -162,8 +166,8 @@ section {
 }
 
 .nav-wrap ul {
-  min-height: 120px;
-  margin: 0 40px;
+  height: 120px;
+  margin: auto 40px;
   position: relative;
 }
 
@@ -189,7 +193,8 @@ section {
   position: relative;
 }
 
-.nav-wrap ul li a {
+.nav-wrap ul li a,
+.nav-sp ul li a {
   font-family: "Kiwi Maru", serif;
 }
 
@@ -249,6 +254,29 @@ section {
 
 .sns-link div + div {
   margin-left: 10px;
+}
+
+@media screen and (max-width: 959px) {
+  .nav-sp ul {
+    text-align: center;
+  }
+
+  .nav-sp .sns-link {
+    margin: auto;
+  }
+
+  .sns-link div + div {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .nav-sp .link-facebook {
+    margin: 0 20px 0 auto;
+  }
+
+  .nav-sp .link-youtube {
+    margin: 0 auto 0 20px;
+  }
 }
 
 /* 2段目 */
@@ -738,12 +766,12 @@ section {
 
 .about-readmore-wrap {
   display: flex;
-  font-family: "Roboto Slab", serif;
+  /* font-family: "Roboto Slab", serif; */
 }
 
 .about-readmore-wrap a {
   margin-top: 20px;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
 }
 
 /* blog */
@@ -940,6 +968,8 @@ section {
 /* page */
 
 .page-type,
+.single-type,
+.works-type,
 .archives-type {
   position: absolute;
   top: 50%;
@@ -951,6 +981,8 @@ section {
 .section--content {
   /* min-height: 800px; */
 }
+
+.single-header img,
 .page-header img {
   width: 100%;
 }
@@ -1022,6 +1054,22 @@ table {
 .post-category > p > span + span,
 .post-tag > p > span + span {
   margin-left: 20px;
+}
+
+.post_taxonomy a {
+  color: #ffffff;
+  padding: 5px;
+  border: solid 1px #222222;
+  background-color: #222222;
+  transition: 0.3s;
+  /* border-radius: 5px; */
+}
+
+.post_taxonomy a:hover {
+  color: #222222;
+  border: solid 1px #222222;
+  background-color: #ffffff;
+  /* border-radius: 5px; */
 }
 
 .link--related-post {
@@ -1144,7 +1192,7 @@ footer {
   }
 
   .hero-box {
-    margin: 20px auto auto auto;
+    margin: 40px auto auto auto;
     width: 90vw;
   }
 
@@ -1181,5 +1229,69 @@ footer {
   }
 }
 
-@media screen and (max-width: 520px) {
+/* display post  */
+/*
+クレハはテーブル
+Display Postはリストなので同じような構成になるようにCSSで制御する
+順番をposted in とかが邪魔なのでそれもまとめて制御
+
+*/
+.displaypost {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 90%;
+  margin: 0 0 1.8em;
+  width: 100%;
+}
+
+.display-posts-listing {
+  margin: 0;
+}
+
+.listing-item:first-child {
+  border-top: solid 1px #eee !important;
+}
+
+.listing-item {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: solid 1px #eee !important;
+  border-right: solid 0px #eee !important;
+  border-left: solid 0px #eee !important;
+  padding: 1em 1.2em;
+  font-size: 90%;
+}
+
+.listing-item .title {
+  order: 3;
+  color: #4693f5;
+  text-decoration: underline;
+  transition: all 0.15s ease-in-out;
+  width: 70%;
+}
+
+.listing-item .title:hover {
+  color: #639af6;
+}
+
+.listing-item .date {
+  order: 1;
+  width: 15%;
+}
+
+.listing-item .category-display {
+  order: 2;
+  width: 15%;
+  text-align: center;
+}
+
+.listing-item .category-display-label {
+  display: none;
+}
+
+.listing-item .date,
+.listing-item .category-display a {
+  color: #444444;
+  pointer-events: none;
+  text-decoration: none;
 }

@@ -10,9 +10,8 @@
 
             <?php get_template_part('template/section_hero', null, $args); ?>
 
-
-        </div><!-- /.section--inner -->
-    </section><!-- /.hero -->
+        </div>
+    </section>
 
 
     <section class="section--strength">
@@ -35,10 +34,10 @@
 
             <div class="strength-viewmore-wrap viewmore-wrap">
                 <a href="<?php echo get_option('strength_btn_url'); ?>" class="btn-box-black"><?php echo get_option('strength_btn_text'); ?></a>
-            </div><!-- /.strength-viewmore-wrap -->
+            </div>
 
-        </div><!-- /.section--inner -->
-    </section><!-- /.section--strength -->
+        </div>
+    </section>
 
 
     <section class="section--services">
@@ -63,11 +62,9 @@
 
             <div class="services-contact">
                 <a href="<?php echo get_option('service_btn_url'); ?>" class="btn-box-black"><?php echo get_option('service_btn_text'); ?></a>
-            </div><!-- /.service-contact-wrap -->
-
-
-        </div><!-- /.section--inner -->
-    </section><!-- /.section--services -->
+            </div>
+            < </div>
+    </section>
 
 
     <section id="works" class="section--works">
@@ -89,13 +86,13 @@
             ?>
 
             <div class="works-viewmore-wrap viewmore-wrap">
-                <!-- <a href="#" class="btn-box-black">実績一覧</a> -->
+
                 <a href="<?php echo get_option('works_btn_url'); ?>" class="btn-box-black"><?php echo get_option('works_btn_text'); ?></a>
-            </div><!-- /.works-viewmore-wrap -->
+            </div>
 
 
-        </div><!-- /.section--inner -->
-    </section><!-- /.section--works -->
+        </div>
+    </section>
 
 
     <section class="section--about">
@@ -116,8 +113,8 @@
             get_template_part('template/section_about', null, $args);
             ?>
 
-        </div><!-- /.section--inner -->
-    </section><!-- /.section--about -->
+        </div>
+    </section>
 
 
     <section class="section--blog">
@@ -141,11 +138,12 @@
 
 
             <div class="blog-viewmore-wrap viewmore-wrap">
-                <a href="#" class="btn-box-black">ブログ一覧</a>
-            </div><!-- /.blog-viewmore-wrap -->
+                <a href="<?php echo get_option('blog_btn_url') ?>" class="btn-box-black"><?php echo get_option('blog_btn_text') ?></a>
 
-        </div><!-- /.section--inner -->
-    </section><!-- /.section--blog -->
+            </div>
+
+        </div>
+    </section>
 
 
     <section class="section--contact">
@@ -156,27 +154,28 @@
                 <div class="contact-title">
                     <h2>お問い合わせ・サービス相談</h2>
                     <p>CONTACT</p>
-                </div><!-- /.contact-title -->
+                </div>
 
                 <div class="contact-item">
                     <div class="tell">
 
                         <p class="num">
                             <a href=""><?php echo get_option('contact_tell_num'); ?></a>
-                        </p><!-- /.num -->
+                        </p>
 
-                        <p class="txt"><?php echo get_option('contact_tell_text'); ?></p><!-- /.txt -->
-                    </div><!-- /.tell -->
+                        <p class="txt"><?php echo get_option('contact_tell_text'); ?>
+                        </p>
+                    </div>
 
                     <div class="mail-wrap">
                         <a href="<?php echo get_option('contact_btn_url'); ?>" class="btn-contact"><?php echo get_option('contact_btn_text'); ?></a>
-                    </div><!-- /.mail -->
-                </div><!-- /.contact-item -->
+                    </div>
+                </div>
 
-            </div><!-- /.contact-wrap -->
+            </div>
 
-        </div><!-- /.section--inner -->
-    </section><!-- /.section--contact -->
+        </div>
+    </section>
 
 </body>
 

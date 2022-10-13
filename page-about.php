@@ -13,9 +13,9 @@
 
         get_template_part('template/echo_section_title', null, $title_args);
         ?>
-    </div><!-- /.works-title -->
+    </div>
 
-</div><!-- /.works-header -->
+</div>
 
 
 <section class="section--content section--about">
@@ -23,7 +23,7 @@
 
         <div class="post-content">
             <?php the_content(); ?>
-        </div><!-- /.post-content -->
+        </div>
 
     </div>
 </section>

@@ -14,21 +14,17 @@
         get_template_part('template/echo_section_title', null, $title_args);
         ?>
 
-    </div><!-- /.works-title -->
+    </div>
 
-</div><!-- /.single-header -->
+</div>
 
 <section class="section--single section--works">
     <div class="section--inner">
-
-        <!-- <p>This is single works page.</p> -->
 
         <div class="post-about">
             <div class="post-title">
                 <h1><?php the_title(); ?></h1>
             </div>
-
-
         </div>
 
         <?php if (has_post_thumbnail()) : ?>
@@ -41,7 +37,7 @@
 
         <div class="post-content">
             <?php the_content(); ?>
-        </div><!-- /.post-content -->
+        </div>
 
 
         <div class="post-category">
@@ -70,7 +66,7 @@
 
         <div class="link--post-tag">
 
-        </div><!-- /.link--post-tag -->
+        </div>
 
 
     </div>

@@ -25,14 +25,14 @@
 
             <div class="post-title">
                 <h1><?php the_title(); ?></h1>
-            </div><!-- /.single-title -->
+            </div>
 
 
-        </div><!-- /.single-about -->
+        </div>
 
         <div class="post-content">
             <?php the_content(); ?>
-        </div><!-- /.post-content -->
+        </div>
 
         <?php get_template_part('template/link_post_nextprev') ?>
 

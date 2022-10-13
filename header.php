@@ -2,11 +2,10 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <!-- <meta charset="<?php bloginfo('charset'); ?>"> -->
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site title</title>
+    <title>LA ORCA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');
                                     echo '?' . filemtime(get_stylesheet_directory() . '/style.css'); ?>" type="text/css" />
@@ -43,8 +42,8 @@
                                 <p><a href="<?php echo esc_url(home_url('/')); ?>" re;="home" class="">LA ORCA</a></p>
                             <?php endif; ?>
 
-                        </div><!-- /.site-logo -->
-                    </div><!-- /.site-logo_wrap -->
+                        </div>
+                    </div>
 
                     <?php wp_nav_menu(array(
                         'theme_location'  => 'global',
@@ -54,9 +53,9 @@
 
                     <?php get_template_part('template/link_sns'); ?>
 
-                </div><!-- /.nav-container -->
-            </div><!-- /.nav-wrap -->
-        </nav><!-- /.nav -->
+                </div>
+            </div>
+        </nav>
 
         <nav class="nav-sp">
             <div class="nav-sp-wrap ">
@@ -91,9 +90,6 @@
                 </div>
             </div>
         </nav>
-
-
-
 
     </header>
 

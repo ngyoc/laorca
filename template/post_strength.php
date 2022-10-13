@@ -2,12 +2,15 @@
 $taxonomy_type = $args['taxonomy_type'];
 ?>
 
-
 <?php echo '<ul class="' . $taxonomy_type . '-list post-list">' ?>
 
 <?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
 $args_arr = array(
+    'paged' => $paged,
     'post_status' => 'publish',
+    'posts_per_page' => 8,
     'post_type' => $taxonomy_type,
     'orderby' => 'date',
     'order' => 'DESC'
@@ -27,15 +30,13 @@ if ($the_query->have_posts()) :
 
                 <div class="post-thumbnail">
                     <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('post-thumbnail', array('class' => 'imgのクラス名', 'alt' => get_the_title(),)); ?>
+                        <?php the_post_thumbnail('post-thumbnail', array('alt' => get_the_title(),)); ?>
                     <?php else : ?>
-                        <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/ダミー画像のパス/'); ?>" alt="<?php the_title(); ?>"> -->
                         <img src="<?php echo get_option('default_thumbnail'); ?>" alt="<?php the_title(); ?>">
                     <?php endif; ?>
                 </div>
 
                 <?php echo '<div class="' . $taxonomy_type . '-title post-title">' ?>
-                <!-- <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> -->
                 <span><?php the_title(); ?></span>
                 </div>
 
@@ -44,7 +45,6 @@ if ($the_query->have_posts()) :
                 </div>
 
                 <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
-                <!-- <a href="<?php the_permalink(); ?>">詳しく見る</a> -->
                 <p>詳しく見る</p>
                 </div>
 

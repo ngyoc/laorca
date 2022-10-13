@@ -40,12 +40,10 @@ if ($the_query->have_posts()) :
                     </div><!-- /.blog-topbar -->
 
                     <?php echo '<div class="blog-title post-title">' ?>
-                    <!-- <span><?php the_title(); ?></span> -->
                     <span><?php echo wp_trim_words(get_the_title(), $num_words = 55, $more = null); ?></span>
                 </div>
 
                 <?php echo '<div class="' . $taxonomy_type . '-excerpt post-excerpt">' ?>
-                <!-- <?php echo mb_substr(get_the_excerpt(), 0, 75); ?> -->
                 <?php echo wp_trim_words(get_the_excerpt(), $num_words = 75, $more = null); ?>
 
 

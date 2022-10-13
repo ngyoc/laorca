@@ -2,7 +2,6 @@
 $title_slag = $args['title_slag'];
 $page_title = $args['page_title'];
 $page_subtitle = $args['page_subtitle'];
-// $flag_showtitle = $args['flag_showtitle'];
 $flag_showtitle = true;
 ?>
 

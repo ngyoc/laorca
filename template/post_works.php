@@ -5,7 +5,6 @@ $taxonomy_type = $args['taxonomy_type'];
 <?php echo '<ul class="' . $taxonomy_type . '-list post-list">' ?>
 
 <?php
-// $paged = get_query_var('paged');
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
 $args_arr = array(
@@ -43,7 +42,6 @@ if ($the_query->have_posts()) :
                 </div>
 
                 <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
-                <!-- <a href="<?php the_permalink(); ?>">詳しく見る</a> -->
                 <p>詳しく見る</p>
                 </div>
             </a>

@@ -1,7 +1,25 @@
 <?php
+// リダイレクト 一部ページで停止
+add_filter('redirect_canonical', 'my_disable_redirect_canonical');
+function my_disable_redirect_canonical($redirect_url)
+{
+
+    $subject = $redirect_url;
+    $pattern = '/\/page\//'; // URLに「/page/」があるかチェック
+    preg_match($pattern, $subject, $matches);
+
+    if ($matches) {
+        //リクエストURLに「/page/」があれば、リダイレクトしない。
+        $redirect_url = false;
+        return $redirect_url;
+    }
+}
+
+
 
 
 // カスタムメニューを追加
+add_action('after_setup_theme', 'menu_setup');
 function menu_setup()
 {
     register_nav_menus(array(
@@ -11,7 +29,6 @@ function menu_setup()
     ));
 }
 
-add_action('after_setup_theme', 'menu_setup');
 
 // アイキャッチ
 add_theme_support('post-thumbnails');
@@ -61,9 +78,9 @@ function create_post_type()
         'menu_position' => 5,     // 管理画面上での配置場所
         'show_in_rest'  => true,  // 5系から出てきた新エディタ「Gutenberg」を有効にする
         'exclude_From_Search' => false,
+        'rewrite' => array('slug' => 'works', 'with_front' => false),
         'supports' => array('title', 'editor', 'thumbnail')
     ]);
-
 
     register_taxonomy(
         'works-cat',
@@ -96,7 +113,6 @@ function create_post_type()
     // register_taxonomy_for_object_type('works', 'services');
 
 }
-
 
 
 

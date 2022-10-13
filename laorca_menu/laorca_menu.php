@@ -30,10 +30,10 @@ function my_add_admin_menu()
 {
   add_options_page(
     'LA ORCA メニューページ', // 設定画面のページタイトル.
-    'LA ORCA', // 管理画面メニューに表示される名前.
+    'LA ORCA',                // 管理画面メニューに表示される名前.
     'manage_options',
-    'laorca-menu', // メニューのスラッグ. my-original-menu urlに使用される. リロードすると弾かれるので注意
-    'my_original_menu_page' // メニューの中身を表示させる関数の名前. my_original_menu_page
+    'laorca-menu',            // メニューのスラッグ. my-original-menu urlに使用される. リロードすると弾かれるので注意
+    'my_original_menu_page'   // メニューの中身を表示させる関数の名前. my_original_menu_page
   );
 }
 
@@ -67,13 +67,12 @@ function my_init_original_settings()
   // セクション追加 ヘッダー設定用
   add_settings_section(
     'laorca-menu-section-header', // 管理用：セクションのスラッグ
-    'ヘッダー設定',          // 表示用：セクション名
-    null,                    // 表示用：セクション説明
-    'laorca-menu'            // 管理用：セクションを作成するページのスラッグ
+    'ヘッダー設定',               // 表示用：セクション名
+    null,                         // 表示用：セクション説明
+    'laorca-menu'                 // 管理用：セクションを作成するページのスラッグ
   );
 
   // セクション追加 テーマカラー設定用
-  // add_settings_section('laorca-menu-section-2', 'テーマカラー設定', null, 'laorca-menu');   // THEME
   add_settings_section('laorca-menu-section-hero',     'HERO',     null, 'laorca-menu'); // HERO
   add_settings_section('laorca-menu-section-strength', 'STRENGTH', null, 'laorca-menu'); // STRENGTH
   add_settings_section('laorca-menu-section-service',  'SERVICE',  null, 'laorca-menu'); // SERVICE
@@ -81,8 +80,8 @@ function my_init_original_settings()
   add_settings_section('laorca-menu-section-about',    'ABOUT',    null, 'laorca-menu'); // ABOUT
   add_settings_section('laorca-menu-section-blog',     'BLOG',     null, 'laorca-menu'); // BLOG
   add_settings_section('laorca-menu-section-contact',  'CONTACT',  null, 'laorca-menu'); // CONTACT
-  add_settings_section('laorca-menu-section-footer',   'フッター', null, 'laorca-menu'); // footer
-  add_settings_section('laorca-menu-section-page-header', '各固定ページヘッダー画像', 'page_header_section_desc', 'laorca-menu'); // footer
+  add_settings_section('laorca-menu-section-footer',   'FOOTER',   null, 'laorca-menu'); // FOOTER
+  add_settings_section('laorca-menu-section-page-header', '各固定ページヘッダー画像', 'page_header_section_desc', 'laorca-menu'); // 各ヘッダー画像
 
 
   // ------------------------------------------------------------------------------------------------------
@@ -91,58 +90,57 @@ function my_init_original_settings()
   // 管理用：項目名, 表示用：設定項目名, 表示用：レイアウト作成用HTML関数, 管理用：設定追加先ページスラッグ, 管理用：設定追加先セクションスラッグ
   add_settings_field('sns_link_facebook',  'Facebook URL',  'display_facebook_url_option',   'laorca-menu', 'laorca-menu-section-header');   // header sns_link
   add_settings_field('sns_link_twitter',   'Twitter URL',   'display_twitter_url_option',    'laorca-menu', 'laorca-menu-section-header');   // header sns_link
-  add_settings_field('sns_link_instagram', 'Instagram URL', 'display_instagram_url_option',  'laorca-menu', 'laorca-menu-section-header');  // header sns_link
+  add_settings_field('sns_link_instagram', 'Instagram URL', 'display_instagram_url_option',  'laorca-menu', 'laorca-menu-section-header');   // header sns_link
   add_settings_field('sns_link_youtube',   'YouTube URL',   'display_youtube_url_option',    'laorca-menu', 'laorca-menu-section-header');   // header sns_link
 
   // 投稿用設定
   add_settings_field('default_thumbnail', 'デフォルトアイキャッチ画像の設定', 'display_default_thumbnail_option', 'laorca-menu', 'laorca-menu-section-header');
 
-  // テーマカラー用設定
-  // add_settings_field('themecolor_header_hover', 'ヘッダー マウスホバー色', 'display_color_header_hover_option', 'laorca-menu', 'laorca-menu-section-2');
-  // add_settings_field('themecolor_post_hover', '投稿 マウスホバー色', 'display_color_header_post_option', 'laorca-menu', 'laorca-menu-section-2');
-
-  // ヒーローセクション
-  add_settings_field('top_hero_image', 'HOME画面のHERO画像の設定', 'display_hero_image_option',            'laorca-menu', 'laorca-menu-section-hero');
-  add_settings_field('top_hero_main_text',    'メインテキスト',    'display_top_hero_main_text_option',    'laorca-menu', 'laorca-menu-section-hero');
-  add_settings_field('top_hero_sub_text',     'サブテキスト',      'display_top_hero_sub_text_option',     'laorca-menu', 'laorca-menu-section-hero');
-  add_settings_field('top_hero_desc_text',    '説明文',            'display_top_hero_desc_text_option',    'laorca-menu', 'laorca-menu-section-hero');
-  add_settings_field('top_hero_contact_text', 'ボタン テキスト',   'display_top_hero_contact_text_option', 'laorca-menu', 'laorca-menu-section-hero');
-  add_settings_field('top_hero_contact_url',  'ボタン リンク先',   'display_top_hero_contact_url_option',  'laorca-menu', 'laorca-menu-section-hero');
+  // HERO
+  add_settings_field('top_hero_image', 'HOME画面のHERO画像の設定',   'display_hero_image_option',            'laorca-menu', 'laorca-menu-section-hero');
+  add_settings_field('top_hero_main_text',    'メインテキスト',      'display_top_hero_main_text_option',    'laorca-menu', 'laorca-menu-section-hero');
+  add_settings_field('top_hero_sub_text',     'サブテキスト',        'display_top_hero_sub_text_option',     'laorca-menu', 'laorca-menu-section-hero');
+  add_settings_field('top_hero_desc_text',    '説明文',              'display_top_hero_desc_text_option',    'laorca-menu', 'laorca-menu-section-hero');
+  add_settings_field('top_hero_contact_text', 'HEROボタン テキスト', 'display_top_hero_contact_text_option', 'laorca-menu', 'laorca-menu-section-hero');
+  add_settings_field('top_hero_contact_url',  'HEROボタン リンク先', 'display_top_hero_contact_url_option',  'laorca-menu', 'laorca-menu-section-hero');
 
   // STRENGTH
-  add_settings_field('strength_btn_text', 'ボタン テキスト', 'display_strength_btn_text_option', 'laorca-menu', 'laorca-menu-section-strength');
-  add_settings_field('strength_btn_url',  'ボタン リンク先', 'display_strength_btn_url_option',  'laorca-menu', 'laorca-menu-section-strength');
+  add_settings_field('strength_btn_text', 'STRENGTHボタン テキスト', 'display_strength_btn_text_option', 'laorca-menu', 'laorca-menu-section-strength');
+  add_settings_field('strength_btn_url',  'STRENGTHボタン リンク先', 'display_strength_btn_url_option',  'laorca-menu', 'laorca-menu-section-strength');
 
   // SERVICE
-  add_settings_field('service_btn_text', 'ボタン テキスト', 'display_service_btn_text_option', 'laorca-menu', 'laorca-menu-section-service');
-  add_settings_field('service_btn_url',  'ボタン リンク先', 'display_service_btn_url_option',  'laorca-menu', 'laorca-menu-section-service');
+  add_settings_field('service_btn_text', 'SERVICEボタン テキスト', 'display_service_btn_text_option', 'laorca-menu', 'laorca-menu-section-service');
+  add_settings_field('service_btn_url',  'SERVICEボタン リンク先', 'display_service_btn_url_option',  'laorca-menu', 'laorca-menu-section-service');
 
   // WORKS
-  add_settings_field('works_btn_text', 'ボタン テキスト', 'display_works_btn_text_option', 'laorca-menu', 'laorca-menu-section-works');
-  add_settings_field('works_btn_url',  'ボタン リンク先', 'display_works_btn_url_option',  'laorca-menu', 'laorca-menu-section-works');
+  add_settings_field('works_btn_text', 'WORKSボタン テキスト', 'display_works_btn_text_option', 'laorca-menu', 'laorca-menu-section-works');
+  add_settings_field('works_btn_url',  'WORKSボタン リンク先', 'display_works_btn_url_option',  'laorca-menu', 'laorca-menu-section-works');
 
   // ABOUT
   add_settings_field('about_image',     'ABOUTセクション 画像の設定', 'display_about_image_option',     'laorca-menu', 'laorca-menu-section-about');
-  add_settings_field('about_desc_text', 'ABOUT セクション 説明文',    'display_about_desc_text_option', 'laorca-menu', 'laorca-menu-section-about');
-  add_settings_field('about_btn_text',  '問い合わせボタンテキスト',   'display_about_btn_text_option',  'laorca-menu', 'laorca-menu-section-about');
-  add_settings_field('about_btn_url',   '問い合わせボタン リンク先',  'display_about_btn_url_option',   'laorca-menu', 'laorca-menu-section-about');
+  add_settings_field('about_desc_text', 'ABOUTセクション 説明文',     'display_about_desc_text_option', 'laorca-menu', 'laorca-menu-section-about');
+  add_settings_field('about_btn_text',  'ABOUTボタン テキスト',       'display_about_btn_text_option',  'laorca-menu', 'laorca-menu-section-about');
+  add_settings_field('about_btn_url',   'ABOUTボタン リンク先',       'display_about_btn_url_option',   'laorca-menu', 'laorca-menu-section-about');
 
   // BLOG
-  add_settings_field('blog_btn_text',   '問い合わせボタンテキスト',   'display_blog_btn_text_option',   'laorca-menu', 'laorca-menu-section-blog');
-  add_settings_field('blog_btn_url',   '問い合わせボタン リンク先',  'display_blog_btn_url_option',   'laorca-menu', 'laorca-menu-section-blog');
+  add_settings_field('blog_btn_text', 'BLOGボタン テキスト', 'display_blog_btn_text_option', 'laorca-menu', 'laorca-menu-section-blog');
+  add_settings_field('blog_btn_url',  'BLOGボタン リンク先', 'display_blog_btn_url_option',  'laorca-menu', 'laorca-menu-section-blog');
 
   // CONTACT
-  add_settings_field('contact_tell_num', '連絡先電話番号', 'display_contact_tell_num_option', 'laorca-menu', 'laorca-menu-section-contact');
-  add_settings_field('contact_tell_text', '連絡先説明文',   'display_contact_tell_text_option', 'laorca-menu', 'laorca-menu-section-contact');
-  add_settings_field('contact_btn_text',  '問い合わせボタンテキスト',  'display_contact_btn_text_option', 'laorca-menu', 'laorca-menu-section-contact');
-  add_settings_field('contact_btn_url',  '問い合わせボタン リンク先', 'display_contact_btn_url_option', 'laorca-menu', 'laorca-menu-section-contact');
+  add_settings_field('contact_tell_num',  '連絡先電話番号',          'display_contact_tell_num_option',  'laorca-menu', 'laorca-menu-section-contact');
+  add_settings_field('contact_tell_text', '連絡先説明文',            'display_contact_tell_text_option', 'laorca-menu', 'laorca-menu-section-contact');
+  add_settings_field('contact_btn_text',  'CONTACTボタン テキスト',  'display_contact_btn_text_option',  'laorca-menu', 'laorca-menu-section-contact');
+  add_settings_field('contact_btn_url',   'CONTACTボタン リンク先',  'display_contact_btn_url_option',   'laorca-menu', 'laorca-menu-section-contact');
+
+  // FOOTER
+  add_settings_field('footer_desc_text', 'FOOTERセクション 説明文', 'display_footer_desc_text_option', 'laorca-menu', 'laorca-menu-section-footer');
 
   // 各固定ページヘッダー画像
   add_settings_field('page_header_image_strength', 'STRENGTH', 'display_page_header_image_strength_option', 'laorca-menu', 'laorca-menu-section-page-header');
   add_settings_field('page_header_image_service',  'SERVICE',  'display_page_header_image_service_option',  'laorca-menu', 'laorca-menu-section-page-header');
-  add_settings_field('page_header_image_work',     'WORK',  'display_page_header_image_work_option',  'laorca-menu', 'laorca-menu-section-page-header');
-  add_settings_field('page_header_image_about',    'ABOUT',  'display_page_header_image_about_option',  'laorca-menu', 'laorca-menu-section-page-header');
-  add_settings_field('page_header_image_blog',     'BLOG',  'display_page_header_image_blog_option',  'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_work',     'WORK',     'display_page_header_image_work_option',     'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_about',    'ABOUT',    'display_page_header_image_about_option',    'laorca-menu', 'laorca-menu-section-page-header');
+  add_settings_field('page_header_image_blog',     'BLOG',     'display_page_header_image_blog_option',     'laorca-menu', 'laorca-menu-section-page-header');
   add_settings_field('page_header_image_contact',  'CONTACT',  'display_page_header_image_contact_option',  'laorca-menu', 'laorca-menu-section-page-header');
 
 
@@ -158,11 +156,7 @@ function my_init_original_settings()
   // 投稿
   register_setting('laorca-menu', 'default_thumbnail');
 
-  // テーマ
-  // register_setting('laorca-menu', 'themecolor_header_hover');
-  // register_setting('laorca-menu', 'themecolor_post_hover');
-
-  // ヒーローセクション
+  // HERO
   register_setting('laorca-menu', 'top_hero_image');
   register_setting('laorca-menu', 'top_hero_sub_text');
   register_setting('laorca-menu', 'top_hero_main_text');
@@ -192,11 +186,15 @@ function my_init_original_settings()
   register_setting('laorca-menu', 'blog_btn_text');
   register_setting('laorca-menu', 'blog_btn_url');
 
-  // コンタクトセクション
+  // CONTACT
   register_setting('laorca-menu', 'contact_tell_num');
   register_setting('laorca-menu', 'contact_tell_text');
   register_setting('laorca-menu', 'contact_btn_text');
   register_setting('laorca-menu', 'contact_btn_url');
+
+  // FOOTER
+  register_setting('laorca-menu', 'footer_desc_text');
+
 
   // 各固定ページ ヘッダー画像設定セクション
   register_setting('laorca-menu', 'page_header_image_strength');
@@ -257,25 +255,6 @@ function display_youtube_url_option()
 // ヘッダー ここまで
 
 
-// テーマ カラー設定
-function display_color_header_hover_option()
-{
-  $themecolor_header_hover = get_option('themecolor_header_hover');
-?>
-  <input name="themecolor_header_hover" class="color-picker-hex" type="text" id="themecolor_header_hover" maxlength="7" value="<?php echo $themecolor_header_hover; ?>" placeholder="#888888" data-default-color="#222222">
-<?php
-}
-
-function display_color_header_post_option()
-{
-  $themecolor_post_hover = get_option('themecolor_post_hover');
-?>
-  <input name="themecolor_post_hover" class="color-picker-hex" type="text" id="themecolor_post_hover" maxlength="7" value="<?php echo $themecolor_post_hover; ?>" placeholder="#888888" data-default-color="#222222">
-<?php
-}
-// テーマ カラー設定 ここまで
-
-
 // HEROセクション
 function display_top_hero_main_text_option()
 {
@@ -297,7 +276,6 @@ function display_top_hero_desc_text_option() // HERO 説明文
 {
   $top_hero_desc_text = get_option('top_hero_desc_text');
 ?>
-  <!-- <input type="text" id="top_hero_desc_text" name="top_hero_desc_text" value="<?php echo $top_hero_desc_text; ?>"> -->
   <textarea name="top_hero_desc_text" id="top_hero_desc_text" cols="100" rows="8" placeholder="<?php _e(''); ?>"><?php echo $top_hero_desc_text; ?></textarea>
 <?php
 }
@@ -321,7 +299,7 @@ function display_top_hero_contact_url_option() // HERO 問い合わせボタン 
 
 
 // STRENGTH セクション
-function display_strength_btn_text_option() // HERO 問い合わせボタン テキスト
+function display_strength_btn_text_option() // STRENGTH 問い合わせボタン テキスト
 {
   $strength_btn_text = get_option('strength_btn_text');
 ?>
@@ -329,7 +307,7 @@ function display_strength_btn_text_option() // HERO 問い合わせボタン テ
 <?php
 }
 
-function display_strength_btn_url_option() // HERO 問い合わせボタン リンク先
+function display_strength_btn_url_option() // STRENGTH 問い合わせボタン リンク先
 {
   $strength_btn_url = get_option('strength_btn_url');
 ?>
@@ -340,7 +318,7 @@ function display_strength_btn_url_option() // HERO 問い合わせボタン リ�
 
 
 // SERVICE セクション
-function display_service_btn_text_option() // HERO 問い合わせボタン テキスト
+function display_service_btn_text_option() // SERVICE 問い合わせボタン テキスト
 {
   $service_btn_text = get_option('service_btn_text');
 ?>
@@ -348,7 +326,7 @@ function display_service_btn_text_option() // HERO 問い合わせボタン テ�
 <?php
 }
 
-function display_service_btn_url_option() // HERO 問い合わせボタン リンク先
+function display_service_btn_url_option() // SERVICE 問い合わせボタン リンク先
 {
   $service_btn_url = get_option('service_btn_url');
 ?>
@@ -359,7 +337,7 @@ function display_service_btn_url_option() // HERO 問い合わせボタン リ�
 
 
 // WORKS セクション
-function display_works_btn_text_option() // HERO 問い合わせボタン テキスト
+function display_works_btn_text_option() // WORKS 問い合わせボタン テキスト
 {
   $works_btn_text = get_option('works_btn_text');
 ?>
@@ -367,7 +345,7 @@ function display_works_btn_text_option() // HERO 問い合わせボタン テキ
 <?php
 }
 
-function display_works_btn_url_option() // HERO 問い合わせボタン リンク先
+function display_works_btn_url_option() // WORKS 問い合わせボタン リンク先
 {
   $works_btn_url = get_option('works_btn_url');
 ?>
@@ -378,16 +356,16 @@ function display_works_btn_url_option() // HERO 問い合わせボタン リン�
 
 
 // ABOUT セクション
-// 画像登録 display optionはこのファイル下部で一括管理
-function display_about_desc_text_option() // HERO 問い合わせボタン テキスト
+function display_about_desc_text_option() // ABOUT 問い合わせボタン テキスト
 {
   $about_desc_text = get_option('about_desc_text');
 ?>
-  <input type="text" id="about_desc_text" name="about_desc_text" value="<?php echo $about_desc_text; ?>">
+  <textarea name="about_desc_text" id="about_desc_text" cols="100" rows="8" placeholder="<?php _e(''); ?>"><?php echo $about_desc_text; ?></textarea>
+
 <?php
 }
 
-function display_about_btn_text_option() // HERO 問い合わせボタン テキスト
+function display_about_btn_text_option() // ABOUT 問い合わせボタン テキスト
 {
   $about_btn_text = get_option('about_btn_text');
 ?>
@@ -395,7 +373,7 @@ function display_about_btn_text_option() // HERO 問い合わせボタン テキ
 <?php
 }
 
-function display_about_btn_url_option() // HERO 問い合わせボタン テキスト
+function display_about_btn_url_option() // ABOUT 問い合わせボタン テキスト
 {
   $about_btn_url = get_option('about_btn_url');
 ?>
@@ -406,7 +384,7 @@ function display_about_btn_url_option() // HERO 問い合わせボタン テキ�
 
 
 // BLOG セクション
-function display_blog_btn_text_option() // HERO 問い合わせボタン テキスト
+function display_blog_btn_text_option() // BLOG 問い合わせボタン テキスト
 {
   $blog_btn_text = get_option('blog_btn_text');
 ?>
@@ -414,7 +392,7 @@ function display_blog_btn_text_option() // HERO 問い合わせボタン テキ�
 <?php
 }
 
-function display_blog_btn_url_option() // HERO 問い合わせボタン テキスト
+function display_blog_btn_url_option() // BLOG 問い合わせボタン リンク先
 {
   $blog_btn_url = get_option('blog_btn_url');
 ?>
@@ -424,7 +402,7 @@ function display_blog_btn_url_option() // HERO 問い合わせボタン テキ�
 // BLOG セクション ここまで
 
 
-// コンタクトセクション
+// CONTACT セクション
 function display_contact_tell_num_option() // 連絡先電話番号
 {
   $contact_tell_num = get_option('contact_tell_num');
@@ -441,7 +419,7 @@ function display_contact_tell_text_option() //  連絡先説明文
 <?php
 }
 
-function display_contact_btn_text_option() //  連絡先説明文
+function display_contact_btn_text_option() //  連絡先 問い合わせボタン テキスト
 {
   $contact_btn_text = get_option('contact_btn_text');
 ?>
@@ -449,13 +427,30 @@ function display_contact_btn_text_option() //  連絡先説明文
 <?php
 }
 
-function display_contact_btn_url_option() //  連絡先説明文
+function display_contact_btn_url_option() //  連絡先 問い合わせボタン リンク先
 {
   $contact_btn_url = get_option('contact_btn_url');
 ?>
   <input type="text" id="contact_btn_url" name="contact_btn_url" value="<?php echo $contact_btn_url; ?>">
 <?php
 }
+// CONTACT セクション ここまで
+
+
+// FOOTOER セクション
+// display_footer_desc_text_option
+function display_footer_desc_text_option() // FOOTER 説明文
+{
+  $footer_desc_text = get_option('footer_desc_text');
+  $about_desc_text = get_option('about_desc_text');
+?>
+  <!-- <textarea name="footer_desc_text" id="footer_desc_text" cols="100" rows="8" placeholder="<?php _e(''); ?>"><?php echo $about_desc_text; ?></textarea> -->
+  <textarea name="footer_desc_text" id="footer_desc_text" cols="100" rows="8" placeholder="<?php _e(''); ?>"><?php echo $footer_desc_text; ?></textarea>
+
+<?php
+}
+// FOOTOER セクション ここまで
+
 
 // ------------------------------------------------------------------------------------------------------
 // サンプル：テキスト設定項目表示用関数
@@ -475,11 +470,10 @@ function my_original_menu_check_func()
   </label>
 <?php
 }
-
 // ------------------------------------------------------------------------------------------------------
+
+
 // 画像
-
-
 //画像アップロード用のタグを出力する
 function generate_upload_image_tag($name, $value)
 { ?>
@@ -590,43 +584,42 @@ function display_about_image_option()
 
 
 // 各固定ページヘッダー画像
-
-// STRENGTH header image
+// STRENGTH ヘッダー画像
 function display_page_header_image_strength_option()
 {
   $page_header_image_strength = get_option('page_header_image_strength');
   generate_upload_image_tag('page_header_image_strength', get_option('page_header_image_strength'));
 }
 
-// SERVICE header image
+// SERVICE ヘッダー画像
 function display_page_header_image_service_option()
 {
   $page_header_image_service = get_option('page_header_image_service');
   generate_upload_image_tag('page_header_image_service', get_option('page_header_image_service'));
 }
 
-// WORK header image
+// WORK ヘッダー画像
 function display_page_header_image_work_option()
 {
   $page_header_image_work = get_option('page_header_image_work');
   generate_upload_image_tag('page_header_image_work', get_option('page_header_image_work'));
 }
 
-// ABOUT header image
+// ABOUT ヘッダー画像
 function display_page_header_image_about_option()
 {
   $page_header_image_about = get_option('page_header_image_about');
   generate_upload_image_tag('page_header_image_about', get_option('page_header_image_about'));
 }
 
-// BLOG header image
+// BLOG ヘッダー画像
 function display_page_header_image_blog_option()
 {
   $page_header_image_blog = get_option('page_header_image_blog');
   generate_upload_image_tag('page_header_image_blog', get_option('page_header_image_blog'));
 }
 
-// CONTACT header image
+// CONTACT ヘッダー画像
 function display_page_header_image_contact_option()
 {
   $page_header_image_contact = get_option('page_header_image_contact');

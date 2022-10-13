@@ -9,8 +9,6 @@ $term_slug   = $term_object->slug; // タームスラッグ
 
     <?php echo '<img src=' . get_option('page_header_image_work') . '>'; ?>
 
-    <!-- <?php echo $taxonomy; ?> -->
-
     <div class="archives-type">
         <?php $title_args = [
             'title_slag'    => 'works',
@@ -21,14 +19,13 @@ $term_slug   = $term_object->slug; // タームスラッグ
         get_template_part('template/echo_section_title', null, $title_args);
         ?>
 
-    </div><!-- /.archives-title -->
+    </div>
 
-</div><!-- /.single-header -->
+</div>
 
 <section class="section--archives">
     <div class="section--inner">
 
-        <p>This is taxonomy.php</p>
 
         <!-- <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <h1><?php the_title(); ?></h1>
@@ -69,7 +66,6 @@ $term_slug   = $term_object->slug; // タームスラッグ
     </div>
 
     <?php echo '<div class="' . $taxonomy_type . '-viewmore post-viewmore">' ?>
-    <!-- <a href="<?php the_permalink(); ?>">詳しく見る</a> -->
     <p>詳しく見る</p>
     </div>
     </a>

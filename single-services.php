@@ -25,17 +25,13 @@
 
             <div class="post-title">
                 <h1><?php the_title(); ?></h1>
-            </div><!-- /.single-title -->
+            </div>
 
-
-        </div><!-- /.single-about -->
+        </div>
 
         <div class="post-content">
             <?php the_content(); ?>
-        </div><!-- /.post-content -->
-
-
-    </div>
+        </div </div>
 </section>
 
 <?php get_footer(); ?>
