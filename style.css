@@ -68,12 +68,6 @@ section + section {
   margin: 100px 0 0 0;
 }
 
-.container {
-  /* margin: 0 auto; */
-  /* max-width: 1600px; */
-  /* width: 90%; */
-}
-
 .section--inner {
   margin: 0 auto;
   max-width: 1600px;
@@ -81,9 +75,6 @@ section + section {
 }
 
 /* デバッグ */
-section {
-  /* border: 1px solid black; */
-}
 
 /* parts */
 .btn-box-black {
@@ -315,7 +306,7 @@ section {
   }
 
   .content-container {
-    margin-top: 4vh;
+    /* margin-top: 4vh; */
   }
 }
 
@@ -458,11 +449,6 @@ section {
 }
 
 /*  */
-.section--hero {
-  min-height: 700px;
-  /* background: rgb(118, 86, 86); */
-}
-
 .hero-wrap {
   display: flex;
   position: relative;
@@ -642,9 +628,6 @@ section {
 
 .post-list img {
   height: 270px;
-}
-
-.post-thumbnail {
 }
 
 .post-thumbnail img {
@@ -978,10 +961,6 @@ section {
   transform: translate(-50%, -50%);
 }
 
-.section--content {
-  /* min-height: 800px; */
-}
-
 .single-header img,
 .page-header img {
   width: 100%;
@@ -1143,8 +1122,6 @@ footer {
 }
 
 @media screen and (max-width: 959px) {
-  .footer-inner {
-  }
 }
 
 @media screen and (min-width: 960px) {
@@ -1229,69 +1206,128 @@ footer {
   }
 }
 
-/* display post  */
-/*
-クレハはテーブル
-Display Postはリストなので同じような構成になるようにCSSで制御する
-順番をposted in とかが邪魔なのでそれもまとめて制御
+/* Contact Form 7 */
+#cf-table {
+  width: 800px;
+  margin: auto;
+}
 
-*/
-.displaypost {
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 90%;
-  margin: 0 0 1.8em;
+#cf-table table {
   width: 100%;
+  border-collapse: collapse;
+  border: solid #ccc;
+  border-width: 1px;
+  color: #fff;
+}
+#cf-table table tr th,
+#cf-table table tr td {
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: top;
+  border: solid #ccc;
+  border-width: 1px;
+  vertical-align: middle;
+}
+#cf-table table tr th {
+  width: 35%;
+  background: #222222;
+}
+@media screen and (max-width: 768px) {
+  #cf-table {
+    width: 100%;
+  }
+
+  #cf-table table,
+  #cf-table table tbody,
+  #cf-table table tr,
+  #cf-table table tr th,
+  #cf-table table tr td {
+    display: block;
+  }
+
+  #cf-table table {
+    width: 100%;
+    border-width: 0 0 1px 0;
+  }
+
+  #cf-table table tr th,
+  #cf-table table tr td {
+    width: 100%;
+    padding: 3% 5%;
+  }
+
+  #cf-table table tr td {
+    border-width: 0px 1px 0px 1px;
+  }
+}
+/*「必須」文字デザイン*/
+.required {
+  font-size: 0.8em;
+  padding: 5px;
+  background: #f57500;
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 5px;
 }
 
-.display-posts-listing {
-  margin: 0;
+/*「任意」文字デザイン*/
+.optional {
+  font-size: 0.8em;
+  padding: 5px;
+  background: #000080;
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 5px;
 }
 
-.listing-item:first-child {
-  border-top: solid 1px #eee !important;
+/* 入力項目を見やすく */
+input.wpcf7-form-control.wpcf7-text,
+textarea.wpcf7-form-control.wpcf7-textarea {
+  width: 100%;
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid #d0d5d8;
+  border-radius: 3px;
+  background-color: #eff1f5;
+}
+textarea.wpcf7-form-control.wpcf7-textarea {
+  height: 200px;
 }
 
-.listing-item {
-  display: flex;
-  flex-wrap: wrap;
-  border-bottom: solid 1px #eee !important;
-  border-right: solid 0px #eee !important;
-  border-left: solid 0px #eee !important;
-  padding: 1em 1.2em;
-  font-size: 90%;
+/* 「送信する」ボタン */
+input.wpcf7-submit {
+  display: block;
+  padding: 15px;
+  width: 400px;
+  background: #222222;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  /* border-radius: 2px; */
+  margin: 30px auto 0;
+  border: 1px solid #222222;
+}
+@media screen and (max-width: 768px) {
+  input.wpcf7-submit {
+    width: 250px;
+  }
 }
 
-.listing-item .title {
-  order: 3;
-  color: #4693f5;
-  text-decoration: underline;
-  transition: all 0.15s ease-in-out;
-  width: 70%;
+input.wpcf7-submit:hover {
+  background: #fff;
+  color: #222222;
+
+  transition: 0.3s;
 }
 
-.listing-item .title:hover {
-  color: #639af6;
+/* エラーメッセージを見やすく */
+span.wpcf7-not-valid-tip,
+.wpcf7-response-output.wpcf7-validation-errors {
+  color: red;
+  font-weight: 600;
 }
 
-.listing-item .date {
-  order: 1;
-  width: 15%;
-}
-
-.listing-item .category-display {
-  order: 2;
-  width: 15%;
+.wpcf7-response-output {
   text-align: center;
-}
-
-.listing-item .category-display-label {
-  display: none;
-}
-
-.listing-item .date,
-.listing-item .category-display a {
-  color: #444444;
-  pointer-events: none;
-  text-decoration: none;
 }

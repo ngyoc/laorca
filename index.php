@@ -63,7 +63,7 @@
             <div class="services-contact">
                 <a href="<?php echo get_option('service_btn_url'); ?>" class="btn-box-black"><?php echo get_option('service_btn_text'); ?></a>
             </div>
-            < </div>
+        </div>
     </section>
 
 
