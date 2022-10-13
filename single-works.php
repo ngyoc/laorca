@@ -2,6 +2,8 @@
 
 <div class="works-header single-header">
 
+    <?php echo '<img src=' . get_option('page_header_image_work') . '>'; ?>
+
     <div class="works-type">
         <?php $title_args = [
             'title_slag'    => 'works',

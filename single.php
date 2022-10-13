@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 <div class="single-header">
+
+    <?php echo '<img src=' . get_option('page_header_image_blog') . '>'; ?>
+
     <div class="single-type">
         <?php $title_args = [
             'title_slag'    => 'blog',
