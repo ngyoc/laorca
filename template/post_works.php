@@ -5,7 +5,11 @@ $taxonomy_type = $args['taxonomy_type'];
 <?php echo '<ul class="' . $taxonomy_type . '-list post-list">' ?>
 
 <?php
+// $paged = get_query_var('paged');
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
 $args_arr = array(
+    'paged' => $paged,
     'post_status' => 'publish',
     'posts_per_page' => 8,
     'post_type' => $taxonomy_type,
@@ -18,6 +22,7 @@ if ($the_query->have_posts()) :
 ?>
 
     <?php global $previousday;
+    global $wp_rewrite;
     while ($the_query->have_posts()) : $the_query->the_post();
         $previousday = '';
     ?>
@@ -46,7 +51,24 @@ if ($the_query->have_posts()) :
 
     <?php endwhile; ?>
 
-<?php wp_reset_postdata();
+<?php
+    wp_reset_postdata();
 endif; ?>
 
 </ul>
+
+
+
+<?php if (!is_front_page()) : ?>
+
+    <?php
+    $pagenation_args = [
+        'the_query'  => $the_query,
+        'paged'     => $paged,
+        'pagenation_type' => 'post'
+    ];
+
+    get_template_part('template/pagenation', null, $pagenation_args);
+
+    ?>
+<?php endif; ?>
