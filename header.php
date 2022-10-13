@@ -83,6 +83,8 @@
                                 'menu_class' => '',
                                 'container' => false
                             )); ?>
+
+                            <?php get_template_part('template/link_sns'); ?>
                         </div>
                     </div>
 
