@@ -78,6 +78,21 @@ $term_slug   = $term_object->slug; // タームスラッグ
 </ul>
 <?php endif; ?>
 
+
+<?php if (!is_front_page()) : ?>
+
+    <?php
+    $pagenation_args = [
+        'the_query'  => $the_query,
+        'paged'     => $paged,
+        'pagenation_type' => 'post'
+    ];
+
+    get_template_part('template/pagenation', null, $pagenation_args);
+
+    ?>
+<?php endif; ?>
+
 </div>
 </section>
 
